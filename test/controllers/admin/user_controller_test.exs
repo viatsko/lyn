@@ -1,7 +1,7 @@
 defmodule Lyn.Admin.UserControllerTest do
   use Lyn.ConnCase
 
-  alias Lyn.Admin.User
+  alias Lyn.User
   @valid_attrs %{email: "some content", password_digest: "some content", username: "some content"}
   @invalid_attrs %{}
 

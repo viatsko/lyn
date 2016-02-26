@@ -1,7 +1,7 @@
 defmodule Lyn.Admin.SiteControllerTest do
   use Lyn.ConnCase
 
-  alias Lyn.Admin.Site
+  alias Lyn.Site
   @valid_attrs %{cache_time: 42, domain_id: 42, language_id: 42, name: "some content", sort_order: 42}
   @invalid_attrs %{}
 
