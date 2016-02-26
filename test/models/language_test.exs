@@ -1,7 +1,7 @@
-defmodule Lyn.Admin.LanguageTest do
+defmodule Lyn.LanguageTest do
   use Lyn.ModelCase
 
-  alias Lyn.Admin.Language
+  alias Lyn.Language
 
   @valid_attrs %{abbr: "some content", charset: "some content", sort_order: 42}
   @invalid_attrs %{}

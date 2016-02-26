@@ -1,7 +1,7 @@
-defmodule Lyn.Admin.RoleTest do
+defmodule Lyn.RoleTest do
   use Lyn.ModelCase
 
-  alias Lyn.Admin.Role
+  alias Lyn.Role
 
   @valid_attrs %{admin: true, name: "some content"}
   @invalid_attrs %{}

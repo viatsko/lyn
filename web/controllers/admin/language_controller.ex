@@ -1,7 +1,7 @@
 defmodule Lyn.Admin.LanguageController do
   use Lyn.Web, :controller
 
-  alias Lyn.Admin.Language
+  alias Lyn.Language
 
   plug :scrub_params, "language" when action in [:create, :update]
 

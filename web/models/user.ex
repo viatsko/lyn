@@ -1,15 +1,15 @@
-defmodule Lyn.Admin.Language do
+defmodule Lyn.User do
   use Lyn.Web, :model
 
-  schema "languages" do
-    field :sort_order, :integer
-    field :abbr, :string
-    field :charset, :string
+  schema "users" do
+    field :username, :string
+    field :email, :string
+    field :password_digest, :string
 
     timestamps
   end
 
-  @required_fields ~w(sort_order abbr charset)
+  @required_fields ~w(username email password_digest)
   @optional_fields ~w()
 
   @doc """

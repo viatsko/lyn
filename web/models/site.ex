@@ -1,14 +1,17 @@
-defmodule Lyn.Admin.Role do
+defmodule Lyn.Site do
   use Lyn.Web, :model
 
-  schema "roles" do
+  schema "sites" do
+    field :sort_order, :integer
+    field :cache_time, :integer
+    field :language_id, :integer
     field :name, :string
-    field :admin, :boolean, default: false
+    field :domain_id, :integer
 
     timestamps
   end
 
-  @required_fields ~w(name admin)
+  @required_fields ~w(sort_order cache_time language_id name domain_id)
   @optional_fields ~w()
 
   @doc """

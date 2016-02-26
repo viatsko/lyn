@@ -1,7 +1,7 @@
 defmodule Lyn.Admin.SiteController do
   use Lyn.Web, :controller
 
-  alias Lyn.Admin.Site
+  alias Lyn.Site
 
   plug :scrub_params, "site" when action in [:create, :update]
 

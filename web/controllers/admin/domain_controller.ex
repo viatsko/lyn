@@ -1,7 +1,7 @@
 defmodule Lyn.Admin.DomainController do
   use Lyn.Web, :controller
 
-  alias Lyn.Admin.Domain
+  alias Lyn.Domain
 
   plug :scrub_params, "domain" when action in [:create, :update]
 

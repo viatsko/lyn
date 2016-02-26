@@ -1,7 +1,7 @@
-defmodule Lyn.Admin.UserTest do
+defmodule Lyn.UserTest do
   use Lyn.ModelCase
 
-  alias Lyn.Admin.User
+  alias Lyn.User
 
   @valid_attrs %{email: "some content", password_digest: "some content", username: "some content"}
   @invalid_attrs %{}

@@ -1,15 +1,15 @@
-defmodule Lyn.Admin.User do
+defmodule Lyn.Domain do
   use Lyn.Web, :model
 
-  schema "users" do
-    field :username, :string
-    field :email, :string
-    field :password_digest, :string
+  schema "domains" do
+    field :site_id, :integer
+    field :name, :string
+    field :sort_order, :integer
 
     timestamps
   end
 
-  @required_fields ~w(username email password_digest)
+  @required_fields ~w(site_id name sort_order)
   @optional_fields ~w()
 
   @doc """

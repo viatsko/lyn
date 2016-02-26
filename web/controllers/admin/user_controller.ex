@@ -1,7 +1,7 @@
 defmodule Lyn.Admin.UserController do
   use Lyn.Web, :controller
 
-  alias Lyn.Admin.User
+  alias Lyn.User
 
   plug :scrub_params, "user" when action in [:create, :update]
 

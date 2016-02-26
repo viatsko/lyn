@@ -1,7 +1,7 @@
-defmodule Lyn.Admin.DomainTest do
+defmodule Lyn.DomainTest do
   use Lyn.ModelCase
 
-  alias Lyn.Admin.Domain
+  alias Lyn.Domain
 
   @valid_attrs %{name: "some content", site_id: 42, sort_order: 42}
   @invalid_attrs %{}

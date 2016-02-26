@@ -1,15 +1,15 @@
-defmodule Lyn.Admin.Domain do
+defmodule Lyn.Language do
   use Lyn.Web, :model
 
-  schema "domains" do
-    field :site_id, :integer
-    field :name, :string
+  schema "languages" do
     field :sort_order, :integer
+    field :abbr, :string
+    field :charset, :string
 
     timestamps
   end
 
-  @required_fields ~w(site_id name sort_order)
+  @required_fields ~w(sort_order abbr charset)
   @optional_fields ~w()
 
   @doc """
