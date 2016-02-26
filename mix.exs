@@ -21,7 +21,7 @@ defmodule Lyn.Mixfile do
   def application do
     [mod: {Lyn, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
