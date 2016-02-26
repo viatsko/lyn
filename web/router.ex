@@ -19,6 +19,8 @@ defmodule Lyn.Router do
     get "/", PageController, :index
 
     resources "/admin/languages", Admin.LanguageController
+
+    resources "/admin/sites", Admin.SiteController
   end
 
   # Other scopes may use custom stacks.

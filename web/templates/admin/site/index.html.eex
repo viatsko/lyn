@@ -1,0 +1,34 @@
+<h2>Listing sites</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Sort order</th>
+      <th>Cache time</th>
+      <th>Language</th>
+      <th>Name</th>
+      <th>Domain</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for site <- @sites do %>
+    <tr>
+      <td><%= site.sort_order %></td>
+      <td><%= site.cache_time %></td>
+      <td><%= site.language_id %></td>
+      <td><%= site.name %></td>
+      <td><%= site.domain_id %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: site_path(@conn, :show, site), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: site_path(@conn, :edit, site), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: site_path(@conn, :delete, site), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New site", to: site_path(@conn, :new) %>

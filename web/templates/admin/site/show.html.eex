@@ -1,0 +1,33 @@
+<h2>Show site</h2>
+
+<ul>
+
+  <li>
+    <strong>Sort order:</strong>
+    <%= @site.sort_order %>
+  </li>
+
+  <li>
+    <strong>Cache time:</strong>
+    <%= @site.cache_time %>
+  </li>
+
+  <li>
+    <strong>Language:</strong>
+    <%= @site.language_id %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @site.name %>
+  </li>
+
+  <li>
+    <strong>Domain:</strong>
+    <%= @site.domain_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: site_path(@conn, :edit, @site) %>
+<%= link "Back", to: site_path(@conn, :index) %>
