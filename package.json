@@ -19,6 +19,7 @@
     "bootstrap": "twbs/bootstrap#v4-dev",
     "brunch": "~2.4.2",
     "clean-css-brunch": "~2.0.0",
+    "copycat-brunch": "^1.1.0",
     "css-brunch": "~2.0.0",
     "estraverse": "^4.1.1",
     "javascript-brunch": "~2.0.0",
