@@ -1,4 +1,5 @@
 # Lyn
+[![Build Status](https://travis-ci.org/viatsko/lyn.svg?branch=master)](https://travis-ci.org/viatsko/lyn)
 [![Dependency Status](https://david-dm.org/viatsko/lyn.svg?style=flat-square)](https://david-dm.org/viatsko/lyn)
 [![devDependency Status](https://david-dm.org/viatsko/lyn/dev-status.svg?style=flat-square)](https://david-dm.org/viatsko/lyn#info=devDependencies)
 
