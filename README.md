@@ -6,6 +6,11 @@
 ## Introduction
 Lyn is a CMS written in Elixir.
 
+## Before You Begin
+Before you begin we recommend you read about the basic building blocks that assemble a Lyn application:
+* [Phoenix Framework](http://www.phoenixframework.org/)
+* [Twitter Bootstrap 4](http://blog.getbootstrap.com/2015/08/19/bootstrap-4-alpha/)
+
 ## Quick Install
 * Install dependencies with `mix deps.get`
 * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
