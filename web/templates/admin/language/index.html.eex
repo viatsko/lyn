@@ -1,0 +1,30 @@
+<h2>Listing languages</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Sort order</th>
+      <th>Abbr</th>
+      <th>Charset</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for language <- @languages do %>
+    <tr>
+      <td><%= language.sort_order %></td>
+      <td><%= language.abbr %></td>
+      <td><%= language.charset %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: language_path(@conn, :show, language), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: language_path(@conn, :edit, language), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: language_path(@conn, :delete, language), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New language", to: language_path(@conn, :new) %>
