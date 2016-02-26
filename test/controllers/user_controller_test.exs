@@ -1,4 +1,4 @@
-defmodule Lyn.Admin.UserControllerTest do
+defmodule Lyn.UserControllerTest do
   use Lyn.ConnCase
 
   alias Lyn.User
