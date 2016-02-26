@@ -1,0 +1,6 @@
+<h2>Edit domain</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: domain_path(@conn, :update, @domain) %>
+
+<%= link "Back", to: domain_path(@conn, :index) %>

@@ -1,0 +1,30 @@
+<h2>Listing domains</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Site</th>
+      <th>Name</th>
+      <th>Sort order</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for domain <- @domains do %>
+    <tr>
+      <td><%= domain.site_id %></td>
+      <td><%= domain.name %></td>
+      <td><%= domain.sort_order %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: domain_path(@conn, :show, domain), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: domain_path(@conn, :edit, domain), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: domain_path(@conn, :delete, domain), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New domain", to: domain_path(@conn, :new) %>
