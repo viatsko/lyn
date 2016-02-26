@@ -23,6 +23,8 @@ defmodule Lyn.Router do
     resources "/admin/sites", Admin.SiteController
 
     resources "/admin/domains", Admin.DomainController
+
+    resources "/admin/users", Admin.UserController
   end
 
   # Other scopes may use custom stacks.
