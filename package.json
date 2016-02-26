@@ -15,19 +15,13 @@
     "cms"
   ],
   "dependencies": {
-    "babel-brunch": "~6.0.0",
     "bootstrap": "twbs/bootstrap#v4-dev",
     "brunch": "~2.4.2",
-    "clean-css-brunch": "~2.0.0",
-    "css-brunch": "~2.0.0",
     "estraverse": "^4.1.1",
-    "javascript-brunch": "~2.0.0",
     "jquery": "^2.2.1",
     "phoenix": "file:deps/phoenix",
     "phoenix_html": "file:deps/phoenix_html",
-    "sass-brunch": "^2.0.0",
-    "tether": "^1.2.0",
-    "uglify-js-brunch": "~2.0.1"
+    "tether": "^1.2.0"
   },
   "devDependencies": {
     "babel-eslint": "^5.0.0",
