@@ -16,7 +16,15 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <li>
+              <%= if user = current_user(@conn) do %>
+                Logged in as <strong><%= user.username %></strong>
+                <br>
+                <%= link "Log out", to: session_path(@conn, :delete, user.id), method: :delete %>
+              <% else %>
+                <%= link "Log in", to: session_path(@conn, :new) %>
+              <% end %>
+            </li>
           </ul>
         </nav>
         <span class="logo"></span>
