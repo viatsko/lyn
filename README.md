@@ -1,4 +1,6 @@
 # Lyn
+[![Dependency Status](https://david-dm.org/viatsko/lyn.svg?style=flat-square)](https://david-dm.org/viatsko/lyn)
+[![devDependency Status](https://david-dm.org/viatsko/lyn/dev-status.svg?style=flat-square)](https://david-dm.org/viatsko/lyn#info=devDependencies)
 
 To start your Phoenix app:
 
