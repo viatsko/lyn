@@ -49,6 +49,12 @@ exports.config = {
 
   // Configure your plugins
   plugins: {
+    sass: {
+      options: {
+        includePaths: ["node_modules/bootstrap/scss"], // tell sass-brunch where to look for files to @import
+        precision: 8 // minimum precision required by bootstrap
+      }
+    },
     babel: {
       // Do not use ES6 compiler in vendor code
       ignore: [/web\/static\/vendor/]
@@ -57,7 +63,9 @@ exports.config = {
 
   modules: {
     autoRequire: {
-      "js/app.js": ["web/static/js/app"]
+      "js/app.js": [
+        "web/static/js/app"
+      ]
     }
   },
 
@@ -65,6 +73,11 @@ exports.config = {
     enabled: true,
     // Whitelist the npm deps to be pulled in as front-end assets.
     // All other deps in package.json will be excluded from the bundle.
-    whitelist: ["phoenix", "phoenix_html"]
+    whitelist: ["phoenix", "phoenix_html", "jquery", "bootstrap", "tether"],
+    globals: {
+      $: 'jquery',
+      jQuery: 'jquery',
+      Tether: 'tether'
+    }
   }
 };
