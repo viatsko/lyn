@@ -32,7 +32,8 @@ defmodule Lyn.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:ex_machina, "~> 0.6.1", only: :test},
+    [{:comeonin, "~> 2.1"},
+     {:ex_machina, "~> 0.6.1", only: :test},
      {:phoenix, "~> 1.1.4"},
      {:postgrex, ">= 0.0.0"},
      {:phoenix_ecto, "~> 2.0"},
