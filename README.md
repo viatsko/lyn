@@ -11,6 +11,9 @@ Lyn is a CMS written in Elixir.
 * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
 * Install Node.js dependencies with `npm install`
 
+The last step might take a very long time since we are using some dependencies
+from github (like Bootstrap 4).
+
 ## Running
 Start Phoenix endpoint with `mix phoenix.server`
 
