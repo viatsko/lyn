@@ -9,11 +9,22 @@ config :lyn, Lyn.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warn
 
-# Configure your database
-config :lyn, Lyn.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "lyn_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
+if File.exists?("/usr/local/Cellar/postgresql/") do
+  # Configure your database
+  config :lyn, Lyn.Repo,
+    adapter: Ecto.Adapters.Postgres,
+    username: System.get_env("USER"),
+    password: "",
+    database: "lyn_test",
+    hostname: "localhost",
+    pool: Ecto.Adapters.SQL.Sandbox
+else
+  # Configure your database
+  config :lyn, Lyn.Repo,
+    adapter: Ecto.Adapters.Postgres,
+    username: "postgres",
+    password: "postgres",
+    database: "lyn_test",
+    hostname: "localhost",
+    pool: Ecto.Adapters.SQL.Sandbox
+end
