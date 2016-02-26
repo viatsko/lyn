@@ -3,6 +3,7 @@ defmodule Lyn.Admin.DomainController do
 
   alias Lyn.Domain
 
+  plug :put_layout, "admin.html"
   plug :scrub_params, "domain" when action in [:create, :update]
 
   def index(conn, _params) do

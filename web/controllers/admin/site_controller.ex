@@ -3,6 +3,7 @@ defmodule Lyn.Admin.SiteController do
 
   alias Lyn.Site
 
+  plug :put_layout, "admin.html"
   plug :scrub_params, "site" when action in [:create, :update]
 
   def index(conn, _params) do

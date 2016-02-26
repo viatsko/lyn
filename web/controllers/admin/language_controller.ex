@@ -3,6 +3,7 @@ defmodule Lyn.Admin.LanguageController do
 
   alias Lyn.Language
 
+  plug :put_layout, "admin.html"
   plug :scrub_params, "language" when action in [:create, :update]
 
   def index(conn, _params) do
