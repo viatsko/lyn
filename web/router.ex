@@ -21,6 +21,8 @@ defmodule Lyn.Router do
     resources "/admin/languages", Admin.LanguageController
 
     resources "/admin/sites", Admin.SiteController
+
+    resources "/admin/domains", Admin.DomainController
   end
 
   # Other scopes may use custom stacks.
