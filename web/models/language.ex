@@ -36,8 +36,8 @@ defmodule Lyn.Language do
     ]
   end
 
-  @required_fields ~w(sort_order name abbr charset)
-  @optional_fields ~w()
+  @required_fields ~w(name abbr charset)
+  @optional_fields ~w(sort_order)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
