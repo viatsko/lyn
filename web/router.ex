@@ -35,7 +35,6 @@ defmodule Lyn.Router do
 
     get "/admin/:resource/", AdminController, :index
     get "/admin/:resource/new", AdminController, :new
-    get "/admin/:resource/csv", AdminController, :csv
     get "/admin/:resource/:id", AdminController, :show
     get "/admin/:resource/:id/edit", AdminController, :edit
     post "/admin/:resource/", AdminController, :create
