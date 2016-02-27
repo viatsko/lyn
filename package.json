@@ -39,6 +39,7 @@
     "phoenix_html": "file:deps/phoenix_html",
     "postcss-loader": "^0.8.1",
     "react": "^0.14.7",
+    "react-bootstrap-table": "^1.5.4",
     "react-dom": "^0.14.7",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
