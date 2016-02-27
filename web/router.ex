@@ -31,12 +31,11 @@ defmodule Lyn.Router do
 
     get "/admin/:resource/", AdminController, :index
     get "/admin/:resource/new", AdminController, :new
-    get "/admin/:resource/:id", AdminController, :show
     get "/admin/:resource/:id/edit", AdminController, :edit
     post "/admin/:resource/", AdminController, :create
     patch "/admin/:resource/:id", AdminController, :update
     put "/admin/:resource/:id", AdminController, :update
-    delete "/admin/:resource/:id", AdminController, :destroy
+    delete "/admin/:resource/:id", AdminController, :delete
     post "/admin/:resource/batch_action", AdminController, :batch_action
   end
 

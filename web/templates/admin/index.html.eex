@@ -6,6 +6,7 @@
       <%= for {id, column} <- @columns do %>
         <th><%= column[:label] %></th>
       <% end %>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -14,7 +15,13 @@
       <%= for {id, column} <- @columns do %>
         <td><%= Map.get(entry, id, nil) %></td>
       <% end %>
+      <td class="text-right nowrap">
+        <%= link "Edit", to: admin_path(@conn, :edit, @resource, entry), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: admin_path(@conn, :delete, @resource, entry), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
     </tr>
 <% end %>
   </tbody>
 </table>
+
+<%= link "New", to: admin_path(@conn, :new, @resource) %>

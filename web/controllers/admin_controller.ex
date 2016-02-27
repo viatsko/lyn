@@ -21,8 +21,8 @@ defmodule Lyn.AdminController do
     render(conn, "dashboard.html")
   end
 
-  def index(conn, params) do
-    model = models[params["resource"]]
+  def index(conn, %{"resource" => resource}) do
+    model = models[resource]
 
     contents = case model do
       nil ->
@@ -37,15 +37,25 @@ defmodule Lyn.AdminController do
 
         columns = Enum.drop(Map.keys(model.__struct__), 2)
 
-        render(conn, "index.html", entries: entries, columns: model.admin_fields)
+        render(conn, "index.html", entries: entries, columns: model.admin_fields, resource: resource)
     end
   end
 
-  def new(conn, params) do
-    model = models[params["resource"]]
+  def new(conn, %{"resource" => resource}) do
+    model = models[resource]
 
     changeset = model.changeset(struct(model))
 
-    render(conn, "new.html", changeset: changeset, columns: model.admin_fields)
+    render(conn, "new.html", changeset: changeset, columns: model.admin_fields, resource: resource)
+  end
+
+  def edit(conn, %{"resource" => resource, "id" => id}) do
+    model = models[resource]
+
+    entry = Repo.get!(model, id)
+
+    changeset = model.changeset(entry)
+
+    render(conn, "edit.html", entry: entry, changeset: changeset, columns: model.admin_fields, resource: resource)
   end
 end

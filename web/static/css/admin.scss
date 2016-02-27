@@ -18,3 +18,11 @@ $fa-font-path: "~font-awesome/fonts";
 .main {
   padding: 15px;
 }
+
+.nowrap {
+  white-space: nowrap;
+
+  form {
+    display: inline-block;
+  }
+}
