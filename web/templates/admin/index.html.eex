@@ -3,13 +3,17 @@
 <table class="table">
   <thead>
     <tr>
-      <th>ID</th>
+      <%= for column <- @columns do %>
+        <th><%= column %></th>
+      <% end %>
     </tr>
   </thead>
   <tbody>
 <%= for entry <- @entries do %>
     <tr>
-      <td><%= entry.id %></td>
+      <%= for column <- @columns do %>
+        <td><%= Map.get(entry, column, nil) %></td>
+      <% end %>
     </tr>
 <% end %>
   </tbody>

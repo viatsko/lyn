@@ -24,17 +24,16 @@ defmodule Lyn.AdminController do
       nil ->
         throw :invalid_route
       model ->
-        page = case conn.assigns[:page] do
+        entries = case conn.assigns[:entries] do
           nil ->
             Repo.all(model)
-          page ->
-            page
+          entries ->
+            entries
         end
-        if function_exported? model, :index_view, 2 do
-          apply(model, :index_view, [conn, page])
-        else
-          render(conn, "index.html", entries: page)
-        end
+
+        columns = Enum.drop(Map.keys(model.__struct__), 2)
+
+        render(conn, "index.html", entries: entries, columns: columns)
     end
 
     conn
