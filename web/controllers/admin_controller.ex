@@ -137,8 +137,42 @@ defmodule Lyn.AdminController do
   end
 
   defp object_tree(conn, _params) do
+    # Fetching all sites
     sites = Repo.all(Site)
 
+    # Fetching all objects to build a tree
+    objects = Repo.all(Object)
+
+    for site <- sites do
+      current = Enum.filter(objects, fn(x) -> x.site_id === site.id end)
+
+      current_size = Enum.count(current)
+
+      # If we don't have objects in current site,
+      # create one
+      if current_size === 0 do
+        changeset = Object.changeset(%Object{}, %{
+          "site_id" => site.id,
+          "parent_id" => 0,
+          "is_published" => true,
+          "is_show_on_site_map" => true,
+          "is_show_in_menu" => true,
+          "sort_order" => 0,
+          "path" => "/",
+          "url" => "/",
+          "full_path" => "/"
+        })
+
+        case Repo.insert(changeset) do
+          {:ok, _entry} ->
+            IO.puts "x"
+          {:error, changeset} ->
+            IO.puts "y"
+        end
+      end
+    end
+
+    # Throwing object_tree to frontend
     assign(conn, :object_tree, sites)
   end
 end
