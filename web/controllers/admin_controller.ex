@@ -20,6 +20,7 @@ defmodule Lyn.AdminController do
   }
 
   plug :put_layout, "admin.html"
+  plug :object_tree
 
   def dashboard(conn, params) do
     render(conn, "dashboard.html")
@@ -133,5 +134,11 @@ defmodule Lyn.AdminController do
     conn
     |> put_flash(:info, "Entry deleted successfully.")
     |> redirect(to: admin_path(conn, :index, resource))
+  end
+
+  defp object_tree(conn, _params) do
+    sites = Repo.all(Site)
+
+    assign(conn, :object_tree, sites)
   end
 end
