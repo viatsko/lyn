@@ -4,7 +4,6 @@ html,
 body,
 .full-height {
     height: 100%;
-    overflow: hidden;
 }
 
 body {
@@ -14,15 +13,23 @@ body {
 /* Phoenix flash messages */
 .alert:empty { display: none; }
 
-.sidebar,
-.main {
+#sidebar,
+#main {
   padding: 15px;
 }
 
-.sidebar {
-  position: relative;
-  height: 100%;
-  margin-bottom: -54px;
+#main {
+  margin-left: 220px;
+  padding-top: 69px;
+}
+
+#sidebar {
+  //margin-top: -54px;
+  position: fixed;
+  z-index: 1;
+  min-height: 100%;
+  width: 220px;
+  padding-top: 69px;
 
   // border-top: 1px solid #fff;
   background:linear-gradient(to right,#3a3633 93%,#2a2725 100%);

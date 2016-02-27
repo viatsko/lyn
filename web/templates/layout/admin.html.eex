@@ -15,7 +15,7 @@
     <!--[if lt IE 8]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <nav class="navbar navbar-dark navbar-main bg-inverse">
+    <nav class="navbar navbar-dark navbar-main navbar-fixed-top bg-inverse">
       <a class="navbar-brand" href="/admin">Lyn Admin</a>
       <ul class="nav navbar-nav">
         <li class="nav-item <%= active_class(@conn, admin_path(@conn, :dashboard)) %>">
@@ -48,10 +48,10 @@
 
     <section class="container-fluid full-height">
       <div class="row full-height">
-        <div class="col-sm-3 col-md-2 sidebar">
+        <aside id="sidebar">
           <%= render Lyn.Admin.SidebarView, sidebar(@conn), assigns %>
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        </aside>
+        <div id="main">
           <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
           <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
