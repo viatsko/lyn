@@ -38,6 +38,9 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 ## Deploying
 Ready to run in production? Please [check Phoenix Framework deployment guides](http://www.phoenixframework.org/docs/deployment).
 
+## FAQ & Chat
+This project moves fast and has an active community, so if you have a question that is not answered below please visit #lyn channel on [Elixir-lang Slack](https://elixir-lang.slack.com/) or file an issue.
+
 ## Contributing
 I am more than happy to accept external contributions to the project in the form of feedback, bug reports and even better - pull requests.
 
