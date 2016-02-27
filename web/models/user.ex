@@ -16,6 +16,23 @@ defmodule Lyn.User do
     field :password_confirmation, :string, virtual: true
   end
 
+  def admin_fields do
+    [
+      id: %{
+        label: "id",
+        type: :integer
+      },
+      username: %{
+        label: "username",
+        type: :string
+      },
+      email: %{
+        label: "email",
+        type: :string
+      }
+    ]
+  end
+
   @required_fields ~w(username email password password_confirmation role_id)
   @optional_fields ~w()
 

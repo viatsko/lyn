@@ -8,13 +8,15 @@ defmodule Lyn.AdminController do
   alias Lyn.Object
   alias Lyn.ObjectType
   alias Lyn.Site
+  alias Lyn.User
 
   def models, do: %{
     "domains" => Domain,
     "languages" => Language,
     "objects" => Object,
     "object_types" => ObjectType,
-    "sites" => Site
+    "sites" => Site,
+    "users" => User
   }
 
   plug :put_layout, "admin.html"
