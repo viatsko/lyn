@@ -3,16 +3,16 @@
 <table class="table">
   <thead>
     <tr>
-      <%= for column <- @columns do %>
-        <th><%= column %></th>
+      <%= for {id, column} <- @columns do %>
+        <th><%= column[:label] %></th>
       <% end %>
     </tr>
   </thead>
   <tbody>
 <%= for entry <- @entries do %>
     <tr>
-      <%= for column <- @columns do %>
-        <td><%= Map.get(entry, column, nil) %></td>
+      <%= for {id, column} <- @columns do %>
+        <td><%= Map.get(entry, id, nil) %></td>
       <% end %>
     </tr>
 <% end %>

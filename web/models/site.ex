@@ -11,6 +11,35 @@ defmodule Lyn.Site do
     timestamps
   end
 
+  def admin_fields do
+    [
+      id: %{
+        label: "id"
+      },
+      language_id: %{
+        label: "language_id"
+      },
+      domain_id: %{
+        label: "domain_id"
+      },
+      name: %{
+        label: "name"
+      },
+      cache_time: %{
+        label: "cache_time"
+      },
+      sort_order: %{
+        label: "sort_order"
+      },
+      inserted_at: %{
+        label: "inserted_at"
+      },
+      updated_at: %{
+        label: "updated_at"
+      }
+    ]
+  end
+
   @required_fields ~w(sort_order cache_time language_id name domain_id)
   @optional_fields ~w()
 

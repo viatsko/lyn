@@ -9,6 +9,29 @@ defmodule Lyn.Domain do
     timestamps
   end
 
+  def admin_fields do
+    [
+      id: %{
+        label: "id"
+      },
+      site_id: %{
+        label: "site_id"
+      },
+      name: %{
+        label: "name"
+      },
+      sort_order: %{
+        label: "sort_order"
+      },
+      inserted_at: %{
+        label: "inserted_at"
+      },
+      updated_at: %{
+        label: "updated_at"
+      }
+    ]
+  end
+
   @required_fields ~w(site_id name sort_order)
   @optional_fields ~w()
 

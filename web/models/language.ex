@@ -9,6 +9,29 @@ defmodule Lyn.Language do
     timestamps
   end
 
+  def admin_fields do
+    [
+      id: %{
+        label: "id"
+      },
+      abbr: %{
+        label: "abbr"
+      },
+      charset: %{
+        label: "charset"
+      },
+      sort_order: %{
+        label: "sort_order"
+      },
+      inserted_at: %{
+        label: "inserted_at"
+      },
+      updated_at: %{
+        label: "updated_at"
+      }
+    ]
+  end
+
   @required_fields ~w(sort_order abbr charset)
   @optional_fields ~w()
 

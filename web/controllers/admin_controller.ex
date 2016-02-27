@@ -33,7 +33,7 @@ defmodule Lyn.AdminController do
 
         columns = Enum.drop(Map.keys(model.__struct__), 2)
 
-        render(conn, "index.html", entries: entries, columns: columns)
+        render(conn, "index.html", entries: entries, columns: model.admin_fields)
     end
 
     conn
