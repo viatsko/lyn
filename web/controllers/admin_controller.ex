@@ -22,7 +22,7 @@ defmodule Lyn.AdminController do
 
     contents = case model do
       nil ->
-        throw :invalid_route
+        render(conn, "dashboard.html")
       model ->
         entries = case conn.assigns[:entries] do
           nil ->
@@ -35,8 +35,5 @@ defmodule Lyn.AdminController do
 
         render(conn, "index.html", entries: entries, columns: model.admin_fields)
     end
-
-    conn
-    |> render("dashboard.html")
   end
 end
