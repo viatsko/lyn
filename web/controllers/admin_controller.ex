@@ -33,7 +33,7 @@ defmodule Lyn.AdminController do
         entries = case conn.assigns[:entries] do
           nil ->
             sort = String.to_atom(params["sort"] || "id")
-            
+
             direction = params["direction"] || "asc"
 
             if direction == "asc" do
@@ -49,7 +49,11 @@ defmodule Lyn.AdminController do
 
         columns = Enum.drop(Map.keys(model.__struct__), 2)
 
-        render(conn, "index.html", entries: entries, columns: model.admin_fields, resource: resource)
+        render(conn, "index.html", entries: entries,
+                                   columns: model.admin_fields,
+                                   resource: resource,
+                                   sort: sort,
+                                   direction: direction)
     end
   end
 
