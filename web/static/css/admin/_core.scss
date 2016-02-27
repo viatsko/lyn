@@ -21,6 +21,10 @@ body {
 #main {
   margin-left: 220px;
   padding-top: 69px;
+
+  &.full-width {
+    margin-left: 0;
+  }
 }
 
 #sidebar {
