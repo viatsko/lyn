@@ -1,5 +1,14 @@
 <h2>Listing</h2>
 
+<div id="react-table"></div>
+
+<script type="text/javascript">
+<% {_, json} = JSON.encode(@columns) %>
+window.__columns__ = <%= raw json %>;
+<% {_, json} = JSON.encode(@entries) %>
+window.__entries__ = <%= raw json %>;
+</script>
+
 <table class="table table-hover table-va table-sm">
   <thead class="thead-default">
     <tr>

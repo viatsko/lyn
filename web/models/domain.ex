@@ -26,14 +26,6 @@ defmodule Lyn.Domain do
       sort_order: %{
         label: "sort_order",
         type: :integer
-      },
-      inserted_at: %{
-        label: "inserted_at",
-        type: :datetime
-      },
-      updated_at: %{
-        label: "updated_at",
-        type: :datetime
       }
     ]
   end
