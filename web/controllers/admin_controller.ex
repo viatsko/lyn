@@ -9,6 +9,7 @@ defmodule Lyn.AdminController do
   models = [
     domain: Domain,
     language: Language,
+    object_type: ObjectType,
     site: Site
   ]
 
