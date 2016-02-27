@@ -95,10 +95,24 @@ defmodule Lyn.AdminController do
     case Repo.update(changeset) do
       {:ok, entry} ->
         conn
-        |> put_flash(:info, "Object updated successfully.")
+        |> put_flash(:info, "Entry updated successfully.")
         |> redirect(to: admin_path(conn, :edit, resource, entry.id))
       {:error, changeset} ->
         render(conn, "edit.html", entry: entry, changeset: changeset, columns: model.admin_fields, resource: resource)
     end
+  end
+
+  def delete(conn, %{"resource" => resource, "id" => id}) do
+    model = models[resource]
+
+    entry = Repo.get!(model, id)
+
+    # Here we use delete! (with a bang) because we expect
+    # it to always work (and if it does not, it will raise).
+    Repo.delete!(entry)
+
+    conn
+    |> put_flash(:info, "Entry deleted successfully.")
+    |> redirect(to: admin_path(conn, :index, resource))
   end
 end
