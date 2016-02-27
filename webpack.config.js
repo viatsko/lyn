@@ -51,7 +51,7 @@ module.exports = {
       jQuery: "jquery",
       "window.Tether": "tether"
     }),
-    new ExtractTextPlugin("css/app.css", {
+    new ExtractTextPlugin("css/[name].css", {
       allChunks: true
     }),
     new CopyWebpackPlugin([{ from: "./web/static/assets" }])
