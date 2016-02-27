@@ -36,7 +36,7 @@ defmodule Lyn.Language do
     ]
   end
 
-  @required_fields ~w(sort_order abbr charset)
+  @required_fields ~w(sort_order name abbr charset)
   @optional_fields ~w()
 
   @doc """
