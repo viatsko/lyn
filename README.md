@@ -36,6 +36,11 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 Ready to run in production? Please [check Phoenix Framework deployment guides](http://www.phoenixframework.org/docs/deployment).
 
 ## Credits
+Main author and active maintainer is Valerii Iatsko, feel free to follow:
+* [Medium Blog](https://medium.com/@viatsko)
+* [Twitter](https://twitter.com/viatsko)
+* [GitHub](https://github.com/viatsko)
+
 Without these it would be impossible to create Lyn:
 * [PxBlog tutorial](https://github.com/Diamond/pxblog) by [@Diamond](https://github.com/Diamond)
 * [Ex Admin](https://github.com/smpallen99/ex_admin) by [@smpallen99](https://github.com/smpallen99)
