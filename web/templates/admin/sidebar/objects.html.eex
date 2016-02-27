@@ -1,10 +1,11 @@
 <ul class="nav nav-pills nav-stacked ">
 <%= for site <- @object_tree do %>
-  <% object = List.first(site.children) %>
   <li class="nav-item">
-    <span class="nav-link">
+    <a class="nav-link <%= active_class(@conn, admin_path(@conn, :edit, "sites", site.id)) %>"
+       href="<%= admin_path(@conn, :edit, "sites", site.id) %>"
+    >
       <%= site.name %> <span class="sr-only">(current)</span>
-    </span>
+    </a>
     <ul>
       <%= for object <- site.children do %>
         <li>

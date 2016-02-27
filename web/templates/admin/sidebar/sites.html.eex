@@ -1,0 +1,1 @@
+<%= render "objects.html", conn: @conn, object_tree: @object_tree %>
