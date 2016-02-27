@@ -17,6 +17,10 @@ defmodule Lyn.AdminController do
 
   plug :put_layout, "admin.html"
 
+  def dashboard(conn, params) do
+    render(conn, "dashboard.html")
+  end
+
   def index(conn, params) do
     model = models[params["resource"]]
 

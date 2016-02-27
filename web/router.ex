@@ -24,10 +24,10 @@ defmodule Lyn.Router do
     resources "/sessions", SessionController, only: [:new, :create, :delete]
 
     # Admin Routes
-    get "/admin", AdminController, :index
-
     resources "/admin/objects", Admin.ObjectController
     resources "/admin/users", Admin.UserController
+
+    get "/admin", AdminController, :dashboard
 
     get "/admin/:resource/", AdminController, :index
     get "/admin/:resource/new", AdminController, :new
@@ -38,11 +38,6 @@ defmodule Lyn.Router do
     put "/admin/:resource/:id", AdminController, :update
     delete "/admin/:resource/:id", AdminController, :destroy
     post "/admin/:resource/batch_action", AdminController, :batch_action
-
-    resources "/admin/object_types", Admin.ObjectTypeController
-    resources "/admin/languages", Admin.LanguageController
-    resources "/admin/sites", Admin.SiteController
-    resources "/admin/domains", Admin.DomainController
   end
 
   # Other scopes may use custom stacks.
