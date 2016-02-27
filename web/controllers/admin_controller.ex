@@ -5,12 +5,14 @@ defmodule Lyn.AdminController do
 
   alias Lyn.Domain
   alias Lyn.Language
+  alias Lyn.Object
   alias Lyn.ObjectType
   alias Lyn.Site
 
   def models, do: %{
     "domains" => Domain,
     "languages" => Language,
+    "objects" => Object,
     "object_types" => ObjectType,
     "sites" => Site
   }

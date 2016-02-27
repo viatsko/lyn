@@ -24,7 +24,6 @@ defmodule Lyn.Router do
     resources "/sessions", SessionController, only: [:new, :create, :delete]
 
     # Admin Routes
-    resources "/admin/objects", Admin.ObjectController
     resources "/admin/users", Admin.UserController
 
     get "/admin", AdminController, :dashboard

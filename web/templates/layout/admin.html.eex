@@ -21,8 +21,8 @@
         <li class="nav-item <%= active_class(@conn, admin_path(@conn, :dashboard)) %>">
           <a class="nav-link" href="<%= admin_path(@conn, :dashboard) %>">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item <%= active_class(@conn, object_path(@conn, :index)) %>">
-          <a class="nav-link" href="<%= object_path(@conn, :index) %>">Objects <span class="sr-only">(current)</span></a>
+        <li class="nav-item <%= active_class(@conn, admin_path(@conn, :index, "objects")) %>">
+          <a class="nav-link" href="<%= admin_path(@conn, :index, "objects") %>">Objects <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item <%= active_class(@conn, admin_path(@conn, :index, "object_types")) %>">
           <a class="nav-link" href="<%= admin_path(@conn, :index, "object_types") %>">Object Types <span class="sr-only">(current)</span></a>

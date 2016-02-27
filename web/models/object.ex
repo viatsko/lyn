@@ -19,6 +19,19 @@ defmodule Lyn.Object do
     timestamps
   end
 
+  def admin_fields do
+    [
+      id: %{
+        label: "id",
+        type: :integer
+      },
+      sort_order: %{
+        label: "sort_order",
+        type: :integer
+      }
+    ]
+  end
+
   @required_fields ~w(sort_order parent_id thread_id site_id object_type_id nesting cache_time is_published is_show_on_site_map is_show_in_menu path url full_path)
   @optional_fields ~w()
 
