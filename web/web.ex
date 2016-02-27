@@ -52,6 +52,8 @@ defmodule Lyn.Web do
       import Lyn.Router.Helpers
       import Lyn.ErrorHelpers
       import Lyn.Gettext
+
+      import Lyn.LinkHelper
     end
   end
 
