@@ -3,6 +3,7 @@ defmodule Lyn.Admin.ObjectController do
 
   alias Lyn.Admin.Object
 
+  plug :put_layout, "admin.html"
   plug :scrub_params, "object" when action in [:create, :update]
 
   def index(conn, _params) do
