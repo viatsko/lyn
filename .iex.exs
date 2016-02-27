@@ -1,6 +1,8 @@
 alias Lyn.Repo
 alias Lyn.Domain
 alias Lyn.Language
+alias Lyn.Object
+alias Lyn.ObjectType
 alias Lyn.RoleChecker
 alias Lyn.Role
 alias Lyn.Site

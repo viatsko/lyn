@@ -1,6 +1,0 @@
-<h2>Edit language</h2>
-
-<%= render "form.html", changeset: @changeset,
-                        action: language_path(@conn, :update, @language) %>
-
-<%= link "Back", to: language_path(@conn, :index) %>
