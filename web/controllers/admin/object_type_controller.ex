@@ -3,6 +3,7 @@ defmodule Lyn.Admin.ObjectTypeController do
 
   alias Lyn.Admin.ObjectType
 
+  plug :put_layout, "admin.html"
   plug :scrub_params, "object_type" when action in [:create, :update]
 
   def index(conn, _params) do
