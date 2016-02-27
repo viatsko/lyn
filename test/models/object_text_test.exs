@@ -3,7 +3,7 @@ defmodule Lyn.ObjectTextTest do
 
   alias Lyn.ObjectText
 
-  @valid_attrs %{document_name: "some content", lang_id: 42, meta_description: "some content", meta_keywords: "some content", name: "some content", object_id: 42, window_name: "some content"}
+  @valid_attrs %{document_name: "some content", language_id: 42, meta_description: "some content", meta_keywords: "some content", name: "some content", object_id: 42, window_name: "some content"}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
