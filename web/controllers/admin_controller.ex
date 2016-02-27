@@ -53,9 +53,11 @@ defmodule Lyn.AdminController do
   def create(conn, params) do
     resource = params["resource"]
 
+    entry_params = params[singularize(resource)]
+
     model = models[resource]
 
-    changeset = model.changeset(struct(model), params[singularize(resource)])
+    changeset = model.changeset(struct(model), entry_params)
 
     case Repo.insert(changeset) do
       {:ok, _entry} ->
@@ -76,5 +78,27 @@ defmodule Lyn.AdminController do
     changeset = model.changeset(entry)
 
     render(conn, "edit.html", entry: entry, changeset: changeset, columns: model.admin_fields, resource: resource)
+  end
+
+  def update(conn, params) do
+    id = params["id"]
+
+    resource = params["resource"]
+
+    entry_params = params[singularize(resource)]
+
+    model = models[resource]
+
+    entry = Repo.get!(model, id)
+    changeset = model.changeset(entry, entry_params)
+
+    case Repo.update(changeset) do
+      {:ok, entry} ->
+        conn
+        |> put_flash(:info, "Object updated successfully.")
+        |> redirect(to: admin_path(conn, :edit, resource, entry.id))
+      {:error, changeset} ->
+        render(conn, "edit.html", entry: entry, changeset: changeset, columns: model.admin_fields, resource: resource)
+    end
   end
 end

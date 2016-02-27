@@ -6,7 +6,7 @@
   <% end %>
 
   <%= for {id, column} <- @columns do %>
-    <%= unless id != :id do %>
+    <%= unless id == :id do %>
       <div class="form-group">
         <%= label f, id, class: "control-label" %>
         <%= text_input f, id, class: "form-control" %>
