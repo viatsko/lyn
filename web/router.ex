@@ -25,6 +25,8 @@ defmodule Lyn.Router do
 
     get "/admin", AdminController, :dashboard
 
+    get "/admin/sql", Admin.SqlController, :index
+
     get "/admin/maintenance", Admin.MaintenanceController, :index
     get "/admin/maintenance/checkdb", Admin.MaintenanceController, :checkdb
     get "/admin/maintenance/reset_cache", Admin.MaintenanceController, :reset_cache
