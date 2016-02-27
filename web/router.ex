@@ -30,6 +30,11 @@ defmodule Lyn.Router do
     get "/admin", AdminController, :dashboard
 
     get "/admin/maintenance", Admin.MaintenanceController, :index
+    get "/admin/maintenance/checkdb", Admin.MaintenanceController, :checkdb
+    get "/admin/maintenance/reset_cache", Admin.MaintenanceController, :reset_cache
+    get "/admin/maintenance/dbdump", Admin.MaintenanceController, :dbdump
+    get "/admin/maintenance/dbload", Admin.MaintenanceController, :dbload
+    get "/admin/maintenance/system_limits", Admin.MaintenanceController, :system_limits
 
     get "/admin/:resource/", AdminController, :index
     get "/admin/:resource/new", AdminController, :new

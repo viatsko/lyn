@@ -1,1 +1,27 @@
-maintenance.html
+<ul class="nav nav-pills nav-stacked">
+  <li class="nav-item">
+    <a class="nav-link <%= active_class(@conn, maintenance_path(@conn, :checkdb)) %>" href="<%= maintenance_path(@conn, :checkdb) %>">
+      Check Database <span class="sr-only">(current)</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link <%= active_class(@conn, maintenance_path(@conn, :reset_cache)) %>" href="<%= maintenance_path(@conn, :reset_cache) %>">
+      Reset Cache <span class="sr-only">(current)</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link <%= active_class(@conn, maintenance_path(@conn, :dbdump)) %>" href="<%= maintenance_path(@conn, :dbdump) %>">
+      Dump Database <span class="sr-only">(current)</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link <%= active_class(@conn, maintenance_path(@conn, :dbload)) %>" href="<%= maintenance_path(@conn, :dbload) %>">
+      Load Database <span class="sr-only">(current)</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link <%= active_class(@conn, maintenance_path(@conn, :system_limits)) %>" href="<%= maintenance_path(@conn, :system_limits) %>">
+      System Limits <span class="sr-only">(current)</span>
+    </a>
+  </li>
+</ul>
