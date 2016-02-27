@@ -1,0 +1,18 @@
+a.up,
+a.down {
+  position: relative;
+}
+
+a.up:after,
+a.down:after {
+  position: absolute;
+  margin-left: 2px;
+}
+
+a.up:after {
+  content: " \2193";
+}
+
+a.down:after {
+  content: " \2191";
+}

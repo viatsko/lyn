@@ -19,12 +19,6 @@ $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
 
 /*
- * React Bootstrap Table
- */
-@import "~react-bootstrap-table/css/toastr.css";
-@import "~react-bootstrap-table/css/react-bootstrap-table-all.css";
-
-/*
  * Browser Upgrade (IE8-)
  */
 @import "browserupgrade";
@@ -35,3 +29,4 @@ $fa-font-path: "~font-awesome/fonts";
 @import "core";
 @import "navbar";
 @import "tables";
+@import "scaffold";

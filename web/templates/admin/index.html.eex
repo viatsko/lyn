@@ -28,7 +28,8 @@ window.__entries__ = <%= raw json %>;
               local_direction = @direction
             end
           %>
-          <a href="<%= admin_path(@conn, :index, @resource, sort: id, direction: local_direction) %>">
+          <a href="<%= admin_path(@conn, :index, @resource, sort: id, direction: local_direction) %>"
+             class="<%= if id == @sort do %><%= if @direction == "asc" do %>down<% else %>up<% end %><% end %>">
             <%= column[:label] %>
           </a>
         </th>
