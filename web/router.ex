@@ -29,6 +29,8 @@ defmodule Lyn.Router do
 
     get "/admin", AdminController, :dashboard
 
+    get "/admin/maintenance", Admin.MaintenanceController, :index
+
     get "/admin/:resource/", AdminController, :index
     get "/admin/:resource/new", AdminController, :new
     get "/admin/:resource/:id/edit", AdminController, :edit
