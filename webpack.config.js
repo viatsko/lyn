@@ -1,4 +1,5 @@
 /* eslint-disable */
+var autoprefixer = require('autoprefixer');
 var path = require("path");
 var webpack = require("webpack");
 
@@ -50,9 +51,13 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("css!sass?outputStyle=expanded&sourceMap")
+        loader: ExtractTextPlugin.extract("css?sourceMap!postcss!sass?outputStyle=expanded&sourceMap&sourceMapContents")
       },
     ],
+  },
+
+  postcss: function () {
+    return [autoprefixer];
   },
 
   plugins: [

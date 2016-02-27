@@ -15,7 +15,7 @@
     <!--[if lt IE 8]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <nav class="navbar navbar-light bg-faded">
+    <nav class="navbar navbar-dark navbar-main bg-inverse">
       <a class="navbar-brand" href="/admin">Lyn Admin</a>
       <ul class="nav navbar-nav">
         <li class="nav-item <%= active_class(@conn, admin_path(@conn, :dashboard)) %>">
@@ -39,7 +39,7 @@
       </ul>
       <form class="form-inline pull-xs-right">
         <input class="form-control" type="text" placeholder="Search">
-        <button class="btn btn-success-outline" type="submit">Search</button>
+        <button class="btn btn-default" type="submit">Search</button>
       </form>
     </nav>
 

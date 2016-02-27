@@ -1,0 +1,30 @@
+/*
+ * === Lyn Admin Theme
+ */
+
+/*
+ * Variables for Bootstrap 4
+ */
+@import "variables";
+
+/*
+ * Bootstrap 4
+ */
+@import "~bootstrap/scss/bootstrap";
+
+/*
+ * Font Awesome
+ */
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+/*
+ * Browser Upgrade (IE8-)
+ */
+@import "browserupgrade";
+
+/*
+ * scss includes
+ */
+@import "core";
+@import "navbar";
