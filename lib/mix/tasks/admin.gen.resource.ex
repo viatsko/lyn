@@ -34,22 +34,6 @@ defmodule Mix.Tasks.Admin.Gen.Resource do
     source = source_file  |> EEx.eval_file(base: get_module, resource: module)
     status_msg "creating", dest_file_path
     File.write! dest_file_path, source
-    display_instructions config
-  end
-
-  defp display_instructions(config) do
-    base = get_module
-    IO.puts ""
-    IO.puts "Remember to update your config file with the resource module"
-    IO.puts ""
-    IO.puts """
-        config :ex_admin, :modules, [
-          #{base}.Lyn.Dashboard,
-          ...
-          #{base}.Lyn.#{config.module}
-        ]
-
-    """
   end
 
   defp parse_args([module]) do
