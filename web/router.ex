@@ -26,6 +26,8 @@ defmodule Lyn.Router do
 
     resources "/admin/objects", Admin.ObjectController
 
+    resources "/admin/object_types", Admin.ObjectTypeController
+
     resources "/admin/languages", Admin.LanguageController
 
     resources "/admin/sites", Admin.SiteController
