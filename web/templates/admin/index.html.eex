@@ -1,1 +1,16 @@
-<p>Main admin page</p>
+<h2>Listing</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for entry <- @entries do %>
+    <tr>
+      <td><%= entry.id %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
