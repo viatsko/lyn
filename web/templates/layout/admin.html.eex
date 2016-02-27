@@ -21,6 +21,12 @@
         <li class="nav-item <%= active_class(@conn, admin_path(@conn, :index)) %>">
           <a class="nav-link" href="<%= admin_path(@conn, :index) %>">Home <span class="sr-only">(current)</span></a>
         </li>
+        <li class="nav-item <%= active_class(@conn, object_path(@conn, :index)) %>">
+          <a class="nav-link" href="<%= object_path(@conn, :index) %>">Objects <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item <%= active_class(@conn, object_type_path(@conn, :index)) %>">
+          <a class="nav-link" href="<%= object_type_path(@conn, :index) %>">Object Types <span class="sr-only">(current)</span></a>
+        </li>
         <li class="nav-item <%= active_class(@conn, language_path(@conn, :index)) %>">
           <a class="nav-link" href="<%= language_path(@conn, :index) %>">Languages <span class="sr-only">(current)</span></a>
         </li>
