@@ -14,28 +14,36 @@ defmodule Lyn.Site do
   def admin_fields do
     [
       id: %{
-        label: "id"
+        label: "id",
+        type: :integer
       },
       language_id: %{
-        label: "language_id"
+        label: "language_id",
+        type: :integer
       },
       domain_id: %{
-        label: "domain_id"
+        label: "domain_id",
+        type: :integer
       },
       name: %{
-        label: "name"
+        label: "name",
+        type: :string
       },
       cache_time: %{
-        label: "cache_time"
+        label: "cache_time",
+        type: :integer
       },
       sort_order: %{
-        label: "sort_order"
+        label: "sort_order",
+        type: :integer
       },
       inserted_at: %{
-        label: "inserted_at"
+        label: "inserted_at",
+        type: :datetime
       },
       updated_at: %{
-        label: "updated_at"
+        label: "updated_at",
+        type: :datetime
       }
     ]
   end

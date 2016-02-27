@@ -12,22 +12,28 @@ defmodule Lyn.Domain do
   def admin_fields do
     [
       id: %{
-        label: "id"
+        label: "id",
+        type: :integer
       },
       site_id: %{
-        label: "site_id"
+        label: "site_id",
+        type: :integer
       },
       name: %{
-        label: "name"
+        label: "name",
+        type: :string
       },
       sort_order: %{
-        label: "sort_order"
+        label: "sort_order",
+        type: :integer
       },
       inserted_at: %{
-        label: "inserted_at"
+        label: "inserted_at",
+        type: :datetime
       },
       updated_at: %{
-        label: "updated_at"
+        label: "updated_at",
+        type: :datetime
       }
     ]
   end

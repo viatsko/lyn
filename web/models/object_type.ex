@@ -13,25 +13,32 @@ defmodule Lyn.ObjectType do
   def admin_fields do
     [
       id: %{
-        label: "id"
+        label: "id",
+        type: :integer
       },
       name: %{
-        label: "name"
+        label: "name",
+        type: :string
       },
       abbr: %{
-        label: "abbr"
+        label: "abbr",
+        type: :string
       },
       is_fake: %{
-        label: "is_fake"
+        label: "is_fake",
+        type: :boolean
       },
       sort_order: %{
-        label: "sort_order"
+        label: "sort_order",
+        type: :integer
       },
       inserted_at: %{
-        label: "inserted_at"
+        label: "inserted_at",
+        type: :datetime
       },
       updated_at: %{
-        label: "updated_at"
+        label: "updated_at",
+        type: :datetime
       }
     ]
   end
