@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900);
 
+html {
+  font-size: 13px;
+}
+
 html,
 body,
 .full-height {
@@ -20,7 +24,7 @@ body {
 
 #main {
   margin-left: 220px;
-  padding-top: 69px;
+  padding-top: 59px;
 
   &.full-width {
     margin-left: 0;
@@ -33,7 +37,7 @@ body {
   z-index: 1;
   min-height: 100%;
   width: 220px;
-  padding-top: 69px;
+  padding-top: 59px;
 
   // border-top: 1px solid #fff;
   background:linear-gradient(to right,#3a3633 93%,#2a2725 100%);
