@@ -1,7 +1,6 @@
 defmodule Lyn.AdminController do
   use Lyn.Web, :controller
 
-  import Lyn.ParamsToAtoms
   import Inflex
 
   alias Lyn.Domain
