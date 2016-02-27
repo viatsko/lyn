@@ -6,15 +6,17 @@ var CopyWebpackPlugin = require("copy-webpack-plugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  entry: [
-    "./web/static/js/app.js",
-    "./web/static/css/app.scss",
-    "./web/static/css/admin.scss",
-  ],
+  entry: {
+    "js/app.js": "./web/static/js/app.js",
+    "js/admin.js": "./web/static/js/admin.js",
+
+    "css/app.css": "./web/static/css/app.scss",
+    "css/admin.css": "./web/static/css/admin.scss",
+  },
 
   output: {
     path: "./priv/static",
-    filename: "js/app.js"
+    filename: "[name]"
   },
 
   resolve: {
@@ -52,7 +54,7 @@ module.exports = {
       jQuery: "jquery",
       "window.Tether": "tether"
     }),
-    new ExtractTextPlugin("css/[name].css", {
+    new ExtractTextPlugin("[name]", {
       allChunks: true
     }),
     new CopyWebpackPlugin([{ from: "./web/static/assets" }])
