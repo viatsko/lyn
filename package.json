@@ -35,6 +35,7 @@
     "node-sass": "^3.4.2",
     "phoenix": "file:deps/phoenix",
     "phoenix_html": "file:deps/phoenix_html",
+    "postcss-loader": "^0.8.1",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "tether": "^1.2.0",
