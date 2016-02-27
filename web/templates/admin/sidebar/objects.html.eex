@@ -4,19 +4,18 @@
     <a class="nav-link <%= active_class(@conn, admin_path(@conn, :edit, "sites", site.id)) %>"
        href="<%= admin_path(@conn, :edit, "sites", site.id) %>"
     >
-      <%= site.name %> <span class="sr-only">(current)</span>
+      site &rarr; <%= site.name %> <span class="sr-only">(current)</span>
     </a>
-    <ul>
-      <%= for object <- site.children do %>
-        <li>
-          <a class="nav-link <%= active_class(@conn, admin_path(@conn, :edit, "objects", object.id)) %>"
-             href="<%= admin_path(@conn, :edit, "objects", object.id) %>"
-          >
-            <%= object.full_path %> <span class="sr-only">(current)</span>
-          </a>
-        </li>
-      <% end %>
-    </ul>
   </li>
+  <%= for object <- site.children do %>
+    <li class="nav-item">
+      <a class="nav-link <%= active_class(@conn, admin_path(@conn, :edit, "objects", object.id)) %>"
+         href="<%= admin_path(@conn, :edit, "objects", object.id) %>"
+      >
+        <%= object.full_path %> <span class="sr-only">(current)</span>
+      </a>
+    </li>
+  <% end %>
+  <hr />
 <% end %>
 </ul>
