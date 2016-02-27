@@ -5,11 +5,13 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= label f, :full_path, class: "control-label" %>
-    <%= text_input f, :full_path, class: "form-control" %>
-    <%= error_tag f, :full_path %>
-  </div>
+  <%= for {id, column} <- @columns do %>
+    <div class="form-group">
+      <%= label f, id, class: "control-label" %>
+      <%= text_input f, id, class: "form-control" %>
+      <%= error_tag f, id %>
+    </div>
+  <% end %>
 
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>
