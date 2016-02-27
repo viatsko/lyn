@@ -1,0 +1,89 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :sort_order, class: "control-label" %>
+    <%= number_input f, :sort_order, class: "form-control" %>
+    <%= error_tag f, :sort_order %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :parent_id, class: "control-label" %>
+    <%= number_input f, :parent_id, class: "form-control" %>
+    <%= error_tag f, :parent_id %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :thread_id, class: "control-label" %>
+    <%= number_input f, :thread_id, class: "form-control" %>
+    <%= error_tag f, :thread_id %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :site_id, class: "control-label" %>
+    <%= number_input f, :site_id, class: "form-control" %>
+    <%= error_tag f, :site_id %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :object_type_id, class: "control-label" %>
+    <%= number_input f, :object_type_id, class: "form-control" %>
+    <%= error_tag f, :object_type_id %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :nesting, class: "control-label" %>
+    <%= number_input f, :nesting, class: "form-control" %>
+    <%= error_tag f, :nesting %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :cache_time, class: "control-label" %>
+    <%= number_input f, :cache_time, class: "form-control" %>
+    <%= error_tag f, :cache_time %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :is_published, class: "control-label" %>
+    <%= checkbox f, :is_published, class: "form-control" %>
+    <%= error_tag f, :is_published %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :is_show_on_site_map, class: "control-label" %>
+    <%= checkbox f, :is_show_on_site_map, class: "form-control" %>
+    <%= error_tag f, :is_show_on_site_map %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :is_show_in_menu, class: "control-label" %>
+    <%= checkbox f, :is_show_in_menu, class: "form-control" %>
+    <%= error_tag f, :is_show_in_menu %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :path, class: "control-label" %>
+    <%= text_input f, :path, class: "form-control" %>
+    <%= error_tag f, :path %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :url, class: "control-label" %>
+    <%= text_input f, :url, class: "form-control" %>
+    <%= error_tag f, :url %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :full_path, class: "control-label" %>
+    <%= text_input f, :full_path, class: "form-control" %>
+    <%= error_tag f, :full_path %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>
