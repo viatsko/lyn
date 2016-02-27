@@ -6,7 +6,13 @@
 [![Hex docs](http://img.shields.io/badge/hex.pm-docs-green.svg?style=flat)](https://hexdocs.pm/lyn)
 
 ## Introduction
-Lyn is a CMS written in Elixir.
+Lyn is a CMS written in Elixir. It combines CRUD and Object Tree models, which means
+that all of the site structure in kept in single tree of objects and provides
+Flux-like API backend, while you still can use CRUD for building REST-API for admin
+panels or providing ability of editing stuff easily in the front-end.
+
+Elixir is chosen as the back-end language because of speed and hot-load.
+I strongly believe Elixir is the future of CMS building.
 
 ## Before You Begin
 Before you begin we recommend you read about the basic building blocks that assemble a Lyn application:
