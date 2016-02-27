@@ -3,6 +3,8 @@ $icon-font-path: "/fonts/"; /* use fonts from priv/static/fonts/ */
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
 
+@import "browserupgrade";
+
 /* Space out content a bit */
 body, form, ul, table {
   margin-top: 20px;
