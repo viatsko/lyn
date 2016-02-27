@@ -32,3 +32,4 @@ Ready to run in production? Please [check Phoenix Framework deployment guides](h
 ## Credits
 Without these it would be impossible to create Lyn:
 * [PxBlog tutorial](https://github.com/Diamond/pxblog) by [@Diamond](https://github.com/Diamond)
+* [Ex Admin](https://github.com/smpallen99/ex_admin) by [@smpallen99](https://github.com/smpallen99)
