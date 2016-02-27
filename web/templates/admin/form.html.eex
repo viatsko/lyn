@@ -9,7 +9,13 @@
     <%= unless id == :id do %>
       <div class="form-group">
         <%= label f, id, class: "control-label" %>
-        <%= text_input f, id, class: "form-control" %>
+        <%= case column.type do
+              :boolean -> checkbox f, id, class: "form-control"
+              :integer -> number_input f, id, class: "form-control"
+              :datetime -> datetime_select f, id, class: "form-control"
+              _ -> text_input f, id, class: "form-control"
+            end
+        %>
         <%= error_tag f, id %>
       </div>
     <% end %>
