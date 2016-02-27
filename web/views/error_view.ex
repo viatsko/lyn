@@ -2,11 +2,11 @@ defmodule Lyn.ErrorView do
   use Lyn.Web, :view
 
   def render("404.html", _assigns) do
-    "Page not found"
+    render("not_found.html", %{})
   end
 
   def render("500.html", _assigns) do
-    "Server internal error"
+    render("server_error.html", %{})
   end
 
   # In case no render clause matches or no
