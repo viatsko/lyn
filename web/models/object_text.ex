@@ -2,7 +2,7 @@ defmodule Lyn.ObjectText do
   use Lyn.Web, :model
 
   schema "object_texts" do
-    field :lang_id, :integer
+    field :language_id, :integer
     field :object_id, :integer
     field :name, :string
     field :window_name, :string
@@ -13,7 +13,7 @@ defmodule Lyn.ObjectText do
     timestamps
   end
 
-  @required_fields ~w(lang_id object_id name window_name document_name meta_keywords meta_description)
+  @required_fields ~w(language_id object_id name window_name document_name meta_keywords meta_description)
   @optional_fields ~w()
 
   @doc """
