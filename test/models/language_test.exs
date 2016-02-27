@@ -3,7 +3,7 @@ defmodule Lyn.LanguageTest do
 
   alias Lyn.Language
 
-  @valid_attrs %{abbr: "some content", charset: "some content", sort_order: 42}
+  @valid_attrs %{name: "some content", abbr: "some content", charset: "some content", sort_order: 42}
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do
