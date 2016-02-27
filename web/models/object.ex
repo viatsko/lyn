@@ -3,10 +3,10 @@ defmodule Lyn.Object do
 
   schema "objects" do
     field :sort_order, :integer
-    field :parent_id, :integer
-    field :thread_id, :integer
-    field :nesting, :integer
-    field :cache_time, :integer
+    field :parent_id, :integer, default: 0
+    field :thread_id, :integer, default: 0
+    field :nesting, :integer, default: 0
+    field :cache_time, :integer, default: 3600
     field :is_published, :boolean, default: false
     field :is_show_on_site_map, :boolean, default: false
     field :is_show_in_menu, :boolean, default: false
@@ -27,14 +27,46 @@ defmodule Lyn.Object do
         label: "id",
         type: :integer
       },
+      site_id: %{
+        label: "site_id",
+        type: :integer
+      },
+      parent_id: %{
+        label: "parent_id",
+        type: :integer
+      },
+      is_published: %{
+        label: "is_published",
+        type: :boolean
+      },
+      is_show_on_site_map: %{
+        label: "is_show_on_site_map",
+        type: :boolean
+      },
+      is_show_in_menu: %{
+        label: "is_show_in_menu",
+        type: :boolean
+      },
       sort_order: %{
         label: "sort_order",
         type: :integer
+      },
+      path: %{
+        label: "path",
+        type: :string
+      },
+      url: %{
+        label: "url",
+        type: :string
+      },
+      full_path: %{
+        label: "full_path",
+        type: :string
       }
     ]
   end
 
-  @required_fields ~w(sort_order parent_id thread_id site_id object_type_id nesting cache_time is_published is_show_on_site_map is_show_in_menu path url full_path)
+  @required_fields ~w(parent_id site_id is_published is_show_on_site_map is_show_in_menu sort_order path url full_path)
   @optional_fields ~w()
 
   @doc """
