@@ -8,7 +8,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
   entry: [
     "./web/static/js/app.js",
-    "./web/static/css/app.scss"
+    "./web/static/css/app.scss",
+    "./web/static/css/admin.scss",
   ],
 
   output: {
