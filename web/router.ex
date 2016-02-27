@@ -18,6 +18,8 @@ defmodule Lyn.Router do
 
     get "/", PageController, :index
 
+    get "/admin", AdminController, :index
+
     resources "/users", UserController
 
     resources "/sessions", SessionController, only: [:new, :create, :delete]
