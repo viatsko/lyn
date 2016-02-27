@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
     <title>Admin</title>
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/admin.css") %>">
   </head>
 
   <body>
@@ -42,6 +42,6 @@
       </main>
 
     </div> <!-- /container -->
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/admin.js") %>"></script>
   </body>
 </html>
