@@ -6,7 +6,8 @@
   <% end %>
 
   <%= for {id, column} <- @columns do %>
-    <%= unless id == :id do %>
+    <%= unless id == :id || id == :sort_order ||
+               id == :inserted_at || id == :updated_at do %>
       <div class="form-group">
         <%= label f, id, class: "control-label" %>
         <%= case column.type do
