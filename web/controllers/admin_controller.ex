@@ -21,7 +21,9 @@ defmodule Lyn.AdminController do
     render(conn, "dashboard.html")
   end
 
-  def index(conn, %{"resource" => resource}) do
+  def index(conn, params) do
+    resource = params["resource"]
+
     model = models[resource]
 
     contents = case model do
@@ -30,7 +32,17 @@ defmodule Lyn.AdminController do
       model ->
         entries = case conn.assigns[:entries] do
           nil ->
-            Repo.all(model)
+            sort = String.to_atom(params["sort"] || "id")
+            
+            direction = params["direction"] || "asc"
+
+            if direction == "asc" do
+              query = from(m in model, order_by: [asc: ^sort])
+            else
+              query = from(m in model, order_by: [desc: ^sort])
+            end
+
+            Repo.all(query)
           entries ->
             entries
         end
