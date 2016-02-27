@@ -12,8 +12,26 @@ window.__entries__ = <%= raw json %>;
 <table class="table table-hover table-va table-sm">
   <thead class="thead-default">
     <tr>
+      <%
+        if @direction == "asc" do
+          new_direction = "desc"
+        else
+          new_direction = "asc"
+        end
+      %>
       <%= for {id, column} <- @columns do %>
-        <th><%= column[:label] %></th>
+        <th>
+          <%
+            if id == @sort do
+              local_direction = new_direction
+            else
+              local_direction = @direction
+            end
+          %>
+          <a href="<%= admin_path(@conn, :index, @resource, sort: id, direction: local_direction) %>">
+            <%= column[:label] %>
+          </a>
+        </th>
       <% end %>
       <th></th>
     </tr>
