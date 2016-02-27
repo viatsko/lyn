@@ -34,6 +34,7 @@ defmodule Lyn.Mixfile do
   defp deps do
     [{:comeonin, "~> 2.1"},
      {:inflex, "~> 1.5.0"},
+     {:json, "~> 0.3.0"},
      {:ex_machina, "~> 0.6.1", only: :test},
      {:phoenix, "~> 1.1.4"},
      {:postgrex, ">= 0.0.0"},
