@@ -29,6 +29,10 @@ defmodule Lyn.User do
       email: %{
         label: "email",
         type: :string
+      },
+      role_id: %{
+        label: "role_id",
+        type: :integer
       }
     ]
   end
