@@ -14,7 +14,7 @@ panels or providing ability of editing stuff easily in the front-end.
 Elixir is chosen as the back-end language because of speed and hot-load.
 I strongly believe Elixir is the future of CMS building.
 
-![](https://cloud.githubusercontent.com/assets/376065/13373962/e3696274-dd76-11e5-9e54-f4a48dc53068.png)
+![](https://cloud.githubusercontent.com/assets/376065/13376060/d1766532-ddb0-11e5-9959-1c9260df6bc1.png)
 
 ## Before You Begin
 Before you begin we recommend you read about the basic building blocks that assemble a Lyn application:
