@@ -1,7 +1,7 @@
 <h2>Listing</h2>
 
-<table class="table">
-  <thead>
+<table class="table table-hover table-va table-sm">
+  <thead class="thead-default">
     <tr>
       <%= for {id, column} <- @columns do %>
         <th><%= column[:label] %></th>
