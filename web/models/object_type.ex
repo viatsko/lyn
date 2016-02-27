@@ -10,6 +10,32 @@ defmodule Lyn.ObjectType do
     timestamps
   end
 
+  def admin_fields do
+    [
+      id: %{
+        label: "id"
+      },
+      name: %{
+        label: "name"
+      },
+      abbr: %{
+        label: "abbr"
+      },
+      is_fake: %{
+        label: "is_fake"
+      },
+      sort_order: %{
+        label: "sort_order"
+      },
+      inserted_at: %{
+        label: "inserted_at"
+      },
+      updated_at: %{
+        label: "updated_at"
+      }
+    ]
+  end
+
   @required_fields ~w(sort_order is_fake abbr name)
   @optional_fields ~w()
 
