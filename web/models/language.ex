@@ -3,6 +3,7 @@ defmodule Lyn.Language do
 
   schema "languages" do
     field :sort_order, :integer
+    field :name, :string
     field :abbr, :string
     field :charset, :string
 
@@ -13,6 +14,9 @@ defmodule Lyn.Language do
     [
       id: %{
         label: "id"
+      },
+      name: %{
+        label: "name"
       },
       abbr: %{
         label: "abbr"
