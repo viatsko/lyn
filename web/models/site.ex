@@ -40,8 +40,8 @@ defmodule Lyn.Site do
     ]
   end
 
-  @required_fields ~w(sort_order cache_time language_id name domain_id)
-  @optional_fields ~w()
+  @required_fields ~w(sort_order cache_time language_id name)
+  @optional_fields ~w(domain_id)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
