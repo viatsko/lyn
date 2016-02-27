@@ -5,7 +5,6 @@ defmodule Lyn.Object do
     field :sort_order, :integer
     field :parent_id, :integer
     field :thread_id, :integer
-    field :site_id, :integer
     field :object_type_id, :integer
     field :nesting, :integer
     field :cache_time, :integer
@@ -15,6 +14,9 @@ defmodule Lyn.Object do
     field :path, :string
     field :url, :string
     field :full_path, :string
+
+    belongs_to :site, Lyn.Site
+    has_many :children, Lyn.Object, foreign_key: :parent_id
 
     timestamps
   end
