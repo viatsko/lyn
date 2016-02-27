@@ -36,4 +36,12 @@ defmodule Lyn.AdminController do
         render(conn, "index.html", entries: entries, columns: model.admin_fields)
     end
   end
+
+  def new(conn, params) do
+    model = models[params["resource"]]
+
+    changeset = model.changeset(struct(model))
+
+    render(conn, "new.html", changeset: changeset)
+  end
 end
