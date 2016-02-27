@@ -42,6 +42,6 @@ defmodule Lyn.AdminController do
 
     changeset = model.changeset(struct(model))
 
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: changeset, columns: model.admin_fields)
   end
 end
