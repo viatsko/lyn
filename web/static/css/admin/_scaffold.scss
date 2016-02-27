@@ -1,18 +1,22 @@
-a.up,
-a.down {
-  position: relative;
-}
+.table-scaffold {
+  a.up,
+  a.down {
+    position: relative;
+    margin-right: 2px;
+  }
 
-a.up:after,
-a.down:after {
-  position: absolute;
-  margin-left: 2px;
-}
+  a.up:after,
+  a.down:after {
+    top: -2px;
+    right: -10px;
+    position: absolute;
+  }
 
-a.up:after {
-  content: " \2193";
-}
+  a.up:after {
+    content: " \2193";
+  }
 
-a.down:after {
-  content: " \2191";
+  a.down:after {
+    content: " \2191";
+  }
 }

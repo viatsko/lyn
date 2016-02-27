@@ -9,7 +9,7 @@ window.__columns__ = <%= raw json %>;
 window.__entries__ = <%= raw json %>;
 </script> -->
 
-<table class="table table-hover table-va table-sm">
+<table class="table table-hover table-va table-scaffold table-sm">
   <thead class="thead-default">
     <tr>
       <%
