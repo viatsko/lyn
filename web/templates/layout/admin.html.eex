@@ -15,23 +15,30 @@
     <!--[if lt IE 8]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <nav class="navbar navbar-light bg-faded">
+      <a class="navbar-brand" href="/admin">Lyn Admin</a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+      <form class="form-inline pull-xs-right">
+        <input class="form-control" type="text" placeholder="Search">
+        <button class="btn btn-success-outline" type="submit">Search</button>
+      </form>
+    </nav>
 
-    <div class="container">
+    <section class="container-fluid main">
       <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li>
-              <%= if user = current_user(@conn) do %>
-                Logged in as <strong><%= user.username %></strong>
-                <br>
-                <%= link "Log out", to: session_path(@conn, :delete, user.id), method: :delete %>
-              <% else %>
-                <%= link "Log in", to: session_path(@conn, :new) %>
-              <% end %>
-            </li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
@@ -41,7 +48,7 @@
         <%= render @view_module, @view_template, assigns %>
       </main>
 
-    </div> <!-- /container -->
+    </section> <!-- /container-fluid -->
     <script src="<%= static_path(@conn, "/js/admin.js") %>"></script>
   </body>
 </html>

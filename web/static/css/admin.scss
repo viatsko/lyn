@@ -4,3 +4,12 @@ $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
 
 @import "browserupgrade";
+
+/* Phoenix flash messages */
+.alert:empty { display: none; }
+
+section {
+  &.main {
+    padding-top: 15px;
+  }
+}
