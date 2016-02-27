@@ -38,6 +38,11 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 ## Deploying
 Ready to run in production? Please [check Phoenix Framework deployment guides](http://www.phoenixframework.org/docs/deployment).
 
+## Contributing
+I am more than happy to accept external contributions to the project in the form of feedback, bug reports and even better - pull requests.
+
+If you would like to submit a pull request, please make an effort to follow the guide in [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Credits
 Main author and active maintainer is Valerii Iatsko, feel free to follow:
 * [Medium Blog](https://medium.com/@viatsko)
