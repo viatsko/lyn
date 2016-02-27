@@ -1,4 +1,4 @@
-defmodule Lyn.Admin.ObjectType do
+defmodule Lyn.ObjectType do
   use Lyn.Web, :model
 
   schema "object_types" do

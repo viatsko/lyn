@@ -1,7 +1,7 @@
 defmodule Lyn.Admin.ObjectTypeTest do
   use Lyn.ModelCase
 
-  alias Lyn.Admin.ObjectType
+  alias Lyn.ObjectType
 
   @valid_attrs %{abbr: "some content", is_fake: true, name: "some content", sort_order: 42}
   @invalid_attrs %{}

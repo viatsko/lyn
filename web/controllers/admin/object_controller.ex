@@ -1,7 +1,7 @@
 defmodule Lyn.Admin.ObjectController do
   use Lyn.Web, :controller
 
-  alias Lyn.Admin.Object
+  alias Lyn.Object
 
   plug :put_layout, "admin.html"
   plug :scrub_params, "object" when action in [:create, :update]
