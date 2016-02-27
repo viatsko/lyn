@@ -16,6 +16,9 @@ defmodule Lyn.Object do
 
     belongs_to :object_type, Lyn.ObjectType
     belongs_to :site, Lyn.Site
+
+    has_many :object_texts, Lyn.ObjectText
+
     has_many :children, Lyn.Object, foreign_key: :parent_id
 
     timestamps
