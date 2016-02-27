@@ -1,5 +1,7 @@
 $icon-font-path: "/fonts/"; /* use fonts from priv/static/fonts/ */
-@import "bootstrap";
+@import "~bootstrap/scss/bootstrap";
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
 
 /* Space out content a bit */
 body, form, ul, table {
