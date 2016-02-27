@@ -4,6 +4,7 @@
 [![devDependency Status](https://david-dm.org/viatsko/lyn/dev-status.svg?style=flat-square)](https://david-dm.org/viatsko/lyn#info=devDependencies)
 [![Hex Version](http://img.shields.io/hexpm/v/lyn.svg?style=flat)](https://hex.pm/packages/lyn)
 [![Hex docs](http://img.shields.io/badge/hex.pm-docs-green.svg?style=flat)](https://hexdocs.pm/lyn)
+[![PayPal donate button](https://img.shields.io/badge/donate-paypal-brightgreen.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=842M2JWBL3JPJ)
 
 ## Introduction
 Lyn is a CMS written in Elixir. It combines CRUD and Object Tree models, which means
