@@ -1,4 +1,4 @@
-<ul class="nav nav-pills nav-stacked">
+<ul class="nav nav-pills nav-stacked ">
   <li class="nav-item">
     <a class="nav-link <%= active_class(@conn, maintenance_path(@conn, :checkdb)) %>" href="<%= maintenance_path(@conn, :checkdb) %>">
       Check Database <span class="sr-only">(current)</span>

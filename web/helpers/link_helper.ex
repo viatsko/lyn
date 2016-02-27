@@ -2,14 +2,20 @@ defmodule Lyn.LinkHelper do
   use Application
 
   def sidebar(conn) do
-    path = Enum.at(conn.path_info, 1) <> ".html"
+    path = Enum.at(conn.path_info, 1)
 
-    eex_path = Path.join([Application.app_dir(:lyn), "../../../../web/templates/admin/sidebar", path <> ".eex"])
-
-    if File.exists?(eex_path) do
-      path
-    else
+    if !path do
       "default.html"
+    else
+      path = path <> ".html"
+
+      eex_path = Path.join([Application.app_dir(:lyn), "../../../../web/templates/admin/sidebar", path <> ".eex"])
+
+      if File.exists?(eex_path) do
+        path
+      else
+        "default.html"
+      end
     end
   end
 

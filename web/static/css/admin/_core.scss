@@ -1,21 +1,35 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900);
 
-body{
+html,
+body,
+.full-height {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* Phoenix flash messages */
 .alert:empty { display: none; }
 
-// section {
-//   &.main {
-//     padding-top: 15px;
-//   }
-// }
-
 .sidebar,
 .main {
   padding: 15px;
+}
+
+.sidebar {
+  position: relative;
+  height: 100%;
+  margin-bottom: -54px;
+
+  // border-top: 1px solid #fff;
+  background:linear-gradient(to right,#3a3633 93%,#2a2725 100%);
+
+  .nav-pills .nav-link {
+    color: #fff;
+  }
 }
 
 .nowrap {
