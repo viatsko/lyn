@@ -2,6 +2,8 @@
 [![Build Status](https://travis-ci.org/viatsko/lyn.svg?branch=master)](https://travis-ci.org/viatsko/lyn)
 [![Dependency Status](https://david-dm.org/viatsko/lyn.svg?style=flat-square)](https://david-dm.org/viatsko/lyn)
 [![devDependency Status](https://david-dm.org/viatsko/lyn/dev-status.svg?style=flat-square)](https://david-dm.org/viatsko/lyn#info=devDependencies)
+[![Hex Version](http://img.shields.io/hexpm/v/lyn.svg?style=flat)](https://hex.pm/packages/lyn)
+[![Hex docs](http://img.shields.io/badge/hex.pm-docs-green.svg?style=flat)](https://hexdocs.pm/lyn)
 
 ## Introduction
 Lyn is a CMS written in Elixir.
