@@ -2,13 +2,14 @@ defmodule Lyn.ObjectText do
   use Lyn.Web, :model
 
   schema "object_texts" do
-    field :language_id, :integer
-    field :object_id, :integer
     field :name, :string
     field :window_name, :string
     field :document_name, :string
     field :meta_keywords, :string
     field :meta_description, :string
+
+    belongs_to :language, Lyn.Language
+    belongs_to :object, Lyn.Object
 
     timestamps
   end
