@@ -1,9 +1,21 @@
 <ul class="nav nav-pills nav-stacked ">
 <%= for site <- @object_tree do %>
+  <% object = List.first(site.children) %>
   <li class="nav-item">
-    <a class="nav-link <%= active_class(@conn, admin_path(@conn, :edit, "objects", 1)) %>" href="<%= admin_path(@conn, :edit, "objects", 1) %>">
+    <span class="nav-link">
       <%= site.name %> <span class="sr-only">(current)</span>
-    </a>
+    </span>
+    <ul>
+      <%= for object <- site.children do %>
+        <li>
+          <a class="nav-link <%= active_class(@conn, admin_path(@conn, :edit, "objects", object.id)) %>"
+             href="<%= admin_path(@conn, :edit, "objects", object.id) %>"
+          >
+            <%= object.full_path %> <span class="sr-only">(current)</span>
+          </a>
+        </li>
+      <% end %>
+    </ul>
   </li>
 <% end %>
 </ul>

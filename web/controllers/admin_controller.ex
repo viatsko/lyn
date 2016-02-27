@@ -143,7 +143,7 @@ defmodule Lyn.AdminController do
     # Fetching all objects to build a tree
     objects = Repo.all(Object)
 
-    for site <- sites do
+    object_tree_list = for site <- sites do
       current = Enum.filter(objects, fn(x) -> x.site_id === site.id end)
 
       current_size = Enum.count(current)
@@ -165,14 +165,16 @@ defmodule Lyn.AdminController do
 
         case Repo.insert(changeset) do
           {:ok, _entry} ->
-            IO.puts "x"
+            current = [_entry]
           {:error, changeset} ->
-            IO.puts "y"
+
         end
       end
+      
+      Map.put(site, :children, current)
     end
 
     # Throwing object_tree to frontend
-    assign(conn, :object_tree, sites)
+    assign(conn, :object_tree, object_tree_list)
   end
 end
