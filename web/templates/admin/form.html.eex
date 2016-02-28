@@ -27,7 +27,6 @@
                 %>
                 <%= for {field_id, field} <- column.model.admin_fields do %>
                   <%
-                    #throw Atom.to_string(field_id)
                     field_sub_id = String.to_atom("outer_text_" <> language.abbr <> "_" <> Atom.to_string(field_id))
                   %>
                   <%= render "form_group.html", f: f, skip_id: skip_id, id: field_sub_id, column: field %>
