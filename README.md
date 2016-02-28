@@ -10,6 +10,8 @@ This is an Elixir CMS. Aims to be the great open-source ecommerce and/or startup
 solution for those who are searching for a performance and stability on top
 of modern technologies like React and Elixir.
 
+In order to run, Lyn requires *Elixir 1.2 or higher* and *NodeJS 5.6 or higher*.
+
 ## Introduction
 Lyn is a CMS written in Elixir. It combines CRUD and Object Tree models, which means
 that all of the site structure in kept in single tree of objects and provides
