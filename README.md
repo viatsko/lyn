@@ -6,6 +6,10 @@
 [![Hex docs](http://img.shields.io/badge/hex.pm-docs-green.svg?style=flat)](https://hexdocs.pm/lyn)
 [![PayPal donate button](https://img.shields.io/badge/donate-paypal-brightgreen.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=842M2JWBL3JPJ)
 
+This is an Elixir CMS. Aims to be the great open-source ecommerce and/or startup
+solution for those who are searching for a performance and stability on top
+of modern technologies like React and Elixir.
+
 ## Introduction
 Lyn is a CMS written in Elixir. It combines CRUD and Object Tree models, which means
 that all of the site structure in kept in single tree of objects and provides
