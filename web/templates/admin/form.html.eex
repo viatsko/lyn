@@ -18,7 +18,7 @@
               </li>
             <% end %>
           </ul>
-
+          <br />
           <div class="tab-content">
             <%= for language <- @languages do %>
               <div class="tab-pane <%= if language == List.first(@languages) do %>active<% end %>" id="outer_text_<%= language.abbr %>" role="tabpanel">
