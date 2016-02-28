@@ -1,7 +1,7 @@
 <%= unless @id == @skip_id || @id == :sort_order ||
            @id == :inserted_at || @id == :updated_at do %>
   <div class="form-group">
-    <label class="control-label" for="<%= @id %>"><%= @column.label %></label>
+    <%= label @f, @column.label, class: "control-label" %>
     <%= case @column.type do
           :boolean -> checkbox @f, @id, class: "form-control"
           :integer -> number_input @f, @id, class: "form-control"
