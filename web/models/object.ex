@@ -1,8 +1,6 @@
 defmodule Lyn.Object do
   use Lyn.Web, :model
 
-  import Lyn.AdminModel
-
   schema "objects" do
     field :sort_order, :integer
     field :parent_id, :integer, default: 0

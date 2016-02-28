@@ -2,8 +2,6 @@ defmodule Lyn.User do
   use Lyn.Web, :model
 
   import Comeonin.Bcrypt, only: [hashpwsalt: 1]
-  
-  import Lyn.AdminModel
 
   schema "users" do
     field :username, :string

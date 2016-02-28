@@ -1,8 +1,6 @@
 defmodule Lyn.Site do
   use Lyn.Web, :model
 
-  import Lyn.AdminModel
-
   schema "sites" do
     field :sort_order, :integer
     field :cache_time, :integer
