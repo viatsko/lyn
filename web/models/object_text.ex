@@ -20,6 +20,10 @@ defmodule Lyn.ObjectText do
         label: "id",
         type: :integer
       },
+      language_id: %{
+        label: "language_id",
+        type: :integer
+      },
       name: %{
         label: "name",
         type: :string
