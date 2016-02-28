@@ -23,7 +23,7 @@ defmodule Lyn.AdminController do
   plug :assign_languages
   plug :object_tree
 
-  def dashboard(conn, params) do
+  def dashboard(conn, _params) do
     render(conn, "dashboard.html")
   end
 
@@ -32,14 +32,14 @@ defmodule Lyn.AdminController do
 
     model = models[resource]
 
-    contents = case model do
+    case model do
       nil ->
         render(conn, "dashboard.html")
       model ->
         sort = String.to_atom(params["sort"] || "id")
 
         direction = params["direction"] || "asc"
-        
+
         entries = case conn.assigns[:entries] do
           nil ->
             query = case direction do
@@ -170,8 +170,8 @@ defmodule Lyn.AdminController do
         })
 
         case Repo.insert(changeset) do
-          {:ok, _entry} ->
-            current = [_entry]
+          {:ok, entry} ->
+            current = [entry]
         end
       end
 
