@@ -69,7 +69,7 @@ defmodule Lyn.AdminController do
 
     changeset = model.changeset(struct(model))
 
-    render(conn, "new.html", changeset: changeset, columns: model.admin_fields, resource: resource)
+    render(conn, "new.html", changeset: changeset, model: model, resource: resource)
   end
 
   def create(conn, params) do
@@ -88,7 +88,7 @@ defmodule Lyn.AdminController do
         |> redirect(to: admin_path(conn, :index, resource))
       {:error, changeset} ->
         #throw changeset
-        render(conn, "new.html", changeset: changeset, columns: model.admin_fields, resource: resource)
+        render(conn, "new.html", changeset: changeset, model: model, resource: resource)
     end
   end
 
@@ -105,7 +105,7 @@ defmodule Lyn.AdminController do
 
     changeset = model.changeset(entry)
 
-    render(conn, "edit.html", entry: entry, changeset: changeset, columns: model.admin_fields, resource: resource)
+    render(conn, "edit.html", entry: entry, changeset: changeset, model: model, resource: resource)
   end
 
   def update(conn, params) do
@@ -117,7 +117,7 @@ defmodule Lyn.AdminController do
 
     model = models[resource]
 
-    entry = case function_exported?(model, :admin_outer_texts, 0) do
+    entry = case Kernel.function_exported?(model, :admin_outer_texts, 0) do
       true ->
         Repo.get!(model, id)
         |> Repo.preload(model.admin_outer_texts[:assoc])
@@ -133,7 +133,7 @@ defmodule Lyn.AdminController do
         |> put_flash(:info, "Entry updated successfully.")
         |> redirect(to: admin_path(conn, :edit, resource, entry.id))
       {:error, changeset} ->
-        render(conn, "edit.html", entry: entry, changeset: changeset, columns: model.admin_fields, resource: resource)
+        render(conn, "edit.html", entry: entry, changeset: changeset, model: model, resource: resource)
     end
   end
 

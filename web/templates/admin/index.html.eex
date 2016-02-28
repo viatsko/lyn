@@ -1,14 +1,5 @@
 <h2>Listing</h2>
 
-<!-- <div id="react-table"></div> -->
-
-<!-- <script type="text/javascript">
-<% {_, json} = JSON.encode(@columns) %>
-window.__columns__ = <%= raw json %>;
-<% {_, json} = JSON.encode(@entries) %>
-window.__entries__ = <%= raw json %>;
-</script> -->
-
 <table class="table table-hover table-va table-scaffold table-sm">
   <thead class="thead-default">
     <tr>
@@ -19,7 +10,7 @@ window.__entries__ = <%= raw json %>;
           new_direction = "asc"
         end
       %>
-      <%= for {id, column} <- @columns do %>
+      <%= for {id, column} <- @model.admin_fields do %>
         <%= if column.type == :integer || column.type == :string || column.type == :boolean || column.type == :datetime do %>
           <th>
             <%
@@ -42,7 +33,7 @@ window.__entries__ = <%= raw json %>;
   <tbody>
 <%= for entry <- @entries do %>
     <tr>
-      <%= for {id, column} <- @columns do %>
+      <%= for {id, column} <- @model.admin_fields do %>
         <%= if column.type == :integer || column.type == :string || column.type == :boolean || column.type == :datetime do %>
           <td><%= Map.get(entry, id, nil) %></td>
         <% end %>

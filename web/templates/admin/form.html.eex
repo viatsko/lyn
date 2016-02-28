@@ -5,40 +5,40 @@
     </div>
   <% end %>
 
-  <%= for {id, column} <- @columns do %>
-    <%= if column.type == :outer_text do %>
-      <div class="card">
-        <div class="card-block">
-          <ul class="nav nav-tabs" role="tablist">
-            <%= for language <- @languages do %>
-              <li class="nav-item">
-                <a class="nav-link <%= if language == List.first(@languages) do %>active<% end %>" data-toggle="tab" href="#outer_text_<%= language.abbr %>" role="tab">
-                  <%= language.name %>
-                </a>
-              </li>
-            <% end %>
-          </ul>
-          <br />
-          <div class="tab-content">
-            <%= for language <- @languages do %>
-              <div class="tab-pane <%= if language == List.first(@languages) do %>active<% end %>" id="outer_text_<%= language.abbr %>" role="tabpanel">
+  <%= if Kernel.function_exported?(@model, :admin_outer_texts, 0) do %>
+    <div class="card">
+      <div class="card-block">
+        <ul class="nav nav-tabs" role="tablist">
+          <%= for language <- @languages do %>
+            <li class="nav-item">
+              <a class="nav-link <%= if language == List.first(@languages) do %>active<% end %>" data-toggle="tab" href="#outer_text_<%= language.abbr %>" role="tab">
+                <%= language.name %>
+              </a>
+            </li>
+          <% end %>
+        </ul>
+        <br />
+        <div class="tab-content">
+          <%= for language <- @languages do %>
+            <div class="tab-pane <%= if language == List.first(@languages) do %>active<% end %>" id="outer_text_<%= language.abbr %>" role="tabpanel">
+              <%
+                skip_id = String.to_atom("outer_text_" <> language.abbr <> "_id")
+              %>
+              <%= for {field_id, field} <- @model.admin_outer_texts[:model].admin_fields do %>
                 <%
-                  skip_id = String.to_atom("outer_text_" <> language.abbr <> "_id")
+                  field_sub_id = String.to_atom("outer_text_" <> language.abbr <> "_" <> Atom.to_string(field_id))
                 %>
-                <%= for {field_id, field} <- column.model.admin_fields do %>
-                  <%
-                    field_sub_id = String.to_atom("outer_text_" <> language.abbr <> "_" <> Atom.to_string(field_id))
-                  %>
-                  <%= render "form_group.html", f: f, skip_id: skip_id, id: field_sub_id, column: field %>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
+                <%= render "form_group.html", f: f, skip_id: skip_id, id: field_sub_id, column: field %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
-    <% else %>
-      <%= render "form_group.html", f: f, skip_id: :id, id: id, column: column %>
-    <% end %>
+    </div>
+  <% end %>
+
+  <%= for {id, column} <- @model.admin_fields do %>
+    <%= render "form_group.html", f: f, skip_id: :id, id: id, column: column %>
   <% end %>
 
   <div class="form-group">
