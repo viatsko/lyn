@@ -85,6 +85,6 @@ defmodule Lyn.Mixfile do
      maintainers: ["Valerii Iatsko"],
      licenses: ["MIT"],
      links: %{"GitHub" => "https://github.com/viatsko/lyn",
-              "Docs" => "http://viatsko.github.io/lyn/"}]
+              "Docs" => "https://github.com/viatsko/lyn/tree/master/docs"}]
   end
 end
