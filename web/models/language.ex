@@ -1,6 +1,8 @@
 defmodule Lyn.Language do
   use Lyn.Web, :model
 
+  import Lyn.AdminModel
+
   schema "languages" do
     field :sort_order, :integer
     field :name, :string

@@ -1,6 +1,8 @@
 defmodule Lyn.Domain do
   use Lyn.Web, :model
 
+  import Lyn.AdminModel
+
   schema "domains" do
     field :site_id, :integer
     field :name, :string

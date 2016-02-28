@@ -1,6 +1,8 @@
 defmodule Lyn.ObjectText do
   use Lyn.Web, :model
 
+  import Lyn.AdminModel
+
   schema "object_texts" do
     field :name, :string
     field :window_name, :string

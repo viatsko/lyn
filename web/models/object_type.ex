@@ -1,6 +1,8 @@
 defmodule Lyn.ObjectType do
   use Lyn.Web, :model
 
+  import Lyn.AdminModel
+
   schema "object_types" do
     field :sort_order, :integer
     field :is_fake, :boolean, default: false
