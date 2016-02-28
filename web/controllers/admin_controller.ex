@@ -42,10 +42,11 @@ defmodule Lyn.AdminController do
 
             direction = params["direction"] || "asc"
 
-            if direction == "asc" do
-              query = from(m in model, order_by: [asc: ^sort])
-            else
-              query = from(m in model, order_by: [desc: ^sort])
+            query = case direction do
+              "asc" ->
+                from(m in model, order_by: [asc: ^sort])
+              _ ->
+                from(m in model, order_by: [desc: ^sort])
             end
 
             Repo.all(query)
