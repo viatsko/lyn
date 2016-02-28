@@ -95,7 +95,13 @@ defmodule Lyn.AdminController do
   def edit(conn, %{"resource" => resource, "id" => id}) do
     model = models[resource]
 
-    entry = Repo.get!(model, id)
+    entry = case function_exported?(model, :admin_outer_texts, 0) do
+      true ->
+        Repo.get!(model, id)
+        |> Repo.preload(model.admin_outer_texts[:assoc])
+      _ ->
+        Repo.get!(model, id)
+    end
 
     changeset = model.changeset(entry)
 
@@ -111,8 +117,14 @@ defmodule Lyn.AdminController do
 
     model = models[resource]
 
-    entry = Repo.get!(model, id)
-    
+    entry = case function_exported?(model, :admin_outer_texts, 0) do
+      true ->
+        Repo.get!(model, id)
+        |> Repo.preload(model.admin_outer_texts[:assoc])
+      _ ->
+        Repo.get!(model, id)
+    end
+
     changeset = model.changeset(entry, entry_params)
 
     case Repo.update(changeset) do

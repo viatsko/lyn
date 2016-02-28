@@ -24,17 +24,18 @@ defmodule Lyn.Object do
     timestamps
   end
 
+  def admin_outer_texts do
+    %{
+      :assoc => :object_texts,
+      :model => Lyn.ObjectText
+    }
+  end
+
   def admin_fields do
     [
       id: %{
         label: "id",
         type: :integer
-      },
-      outer_text: %{
-        label: "outer_text",
-        type: :outer_text,
-        assoc: :object_texts,
-        model: Lyn.ObjectText
       },
       site_id: %{
         label: "site_id",
