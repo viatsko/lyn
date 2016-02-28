@@ -14,7 +14,9 @@
               :boolean -> checkbox f, id, class: "form-control"
               :integer -> number_input f, id, class: "form-control"
               :datetime -> datetime_select f, id, class: "form-control"
-              _ -> text_input f, id, class: "form-control"
+              :string -> text_input f, id, class: "form-control"
+              _ ->
+                
             end
         %>
         <%= error_tag f, id %>

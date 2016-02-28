@@ -20,19 +20,21 @@ window.__entries__ = <%= raw json %>;
         end
       %>
       <%= for {id, column} <- @columns do %>
-        <th>
-          <%
-            if id == @sort do
-              local_direction = new_direction
-            else
-              local_direction = @direction
-            end
-          %>
-          <a href="<%= admin_path(@conn, :index, @resource, sort: id, direction: local_direction) %>"
-             class="<%= if id == @sort do %><%= if @direction == "asc" do %>down<% else %>up<% end %><% end %>">
-            <%= column[:label] %>
-          </a>
-        </th>
+        <%= if column.type == :integer || column.type == :string || column.type == :boolean || column.type == :datetime do %>
+          <th>
+            <%
+              if id == @sort do
+                local_direction = new_direction
+              else
+                local_direction = @direction
+              end
+            %>
+            <a href="<%= admin_path(@conn, :index, @resource, sort: id, direction: local_direction) %>"
+               class="<%= if id == @sort do %><%= if @direction == "asc" do %>down<% else %>up<% end %><% end %>">
+              <%= column[:label] %>
+            </a>
+          </th>
+        <% end %>
       <% end %>
       <th></th>
     </tr>
@@ -41,7 +43,9 @@ window.__entries__ = <%= raw json %>;
 <%= for entry <- @entries do %>
     <tr>
       <%= for {id, column} <- @columns do %>
-        <td><%= Map.get(entry, id, nil) %></td>
+        <%= if column.type == :integer || column.type == :string || column.type == :boolean || column.type == :datetime do %>
+          <td><%= Map.get(entry, id, nil) %></td>
+        <% end %>
       <% end %>
       <td class="text-right nowrap">
         <%= link "Edit", to: admin_path(@conn, :edit, @resource, entry), class: "btn btn-default btn-xs" %>
