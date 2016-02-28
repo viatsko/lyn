@@ -36,12 +36,12 @@ defmodule Lyn.AdminController do
       nil ->
         render(conn, "dashboard.html")
       model ->
+        sort = String.to_atom(params["sort"] || "id")
+
+        direction = params["direction"] || "asc"
+        
         entries = case conn.assigns[:entries] do
           nil ->
-            sort = String.to_atom(params["sort"] || "id")
-
-            direction = params["direction"] || "asc"
-
             query = case direction do
               "asc" ->
                 from(m in model, order_by: [asc: ^sort])
