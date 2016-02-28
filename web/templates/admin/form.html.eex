@@ -22,8 +22,10 @@
           <div class="tab-content">
             <%= for language <- @languages do %>
               <div class="tab-pane <%= if language == List.first(@languages) do %>active<% end %>" id="object_text_<%= language.abbr %>" role="tabpanel">
-                <%= for {field_id, field} <- column.model.admin_fields do %>
-                  <%= render "form_group.html", f: f, id: field_id, column: field %>
+                <%= form_for column.model.changeset(struct(column.model)), nil, [as: String.to_atom("object_text_" <> language.abbr)], fn nf -> %>
+                  <%= for {field_id, field} <- column.model.admin_fields do %>
+                    <%= render "form_group.html", f: nf, id: field_id, column: field %>
+                  <% end %>
                 <% end %>
               </div>
             <% end %>
