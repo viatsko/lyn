@@ -73,13 +73,14 @@ defmodule Lyn.Mixfile do
        "test",
        "web",
        ".babelrc",
-       ".eslint*",
+       ".eslintrc",
+       ".eslintignore",
        ".iex.exs",
        "mix.exs",
        "package.json",
        "webpack.config.js",
-       "README*",
-       "LICENSE*"
+       "README.md",
+       "LICENSE.md"
      ],
      maintainers: ["Valerii Iatsko"],
      licenses: ["MIT"],
