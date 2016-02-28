@@ -33,6 +33,7 @@ defmodule Lyn.Object do
       outer_text: %{
         label: "outer_text",
         type: :outer_text,
+        assoc: :object_texts,
         model: Lyn.ObjectText
       },
       site_id: %{
