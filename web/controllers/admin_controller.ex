@@ -20,6 +20,7 @@ defmodule Lyn.AdminController do
   }
 
   plug :put_layout, "admin.html"
+  plug :assign_languages
   plug :object_tree
 
   def dashboard(conn, params) do
@@ -136,6 +137,10 @@ defmodule Lyn.AdminController do
     |> redirect(to: admin_path(conn, :index, resource))
   end
 
+  defp assign_languages(conn, _params) do
+    assign(conn, :languages, Repo.all(Language))
+  end
+
   defp object_tree(conn, _params) do
     # Fetching all sites
     sites = Repo.all(Site)
@@ -170,7 +175,7 @@ defmodule Lyn.AdminController do
 
         end
       end
-      
+
       Map.put(site, :children, current)
     end
 
