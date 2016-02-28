@@ -1,0 +1,16 @@
+<%= unless @id == :id || @id == :sort_order ||
+           @id == :inserted_at || @id == :updated_at do %>
+  <div class="form-group">
+    <%= label @f, @id, class: "control-label" %>
+    <%= case @column.type do
+          :boolean -> checkbox @f, @id, class: "form-control"
+          :integer -> number_input @f, @id, class: "form-control"
+          :datetime -> datetime_select @f, @id, class: "form-control"
+          :string -> text_input @f, @id, class: "form-control"
+          _ ->
+
+        end
+    %>
+    <%= error_tag @f, @id %>
+  </div>
+<% end %>

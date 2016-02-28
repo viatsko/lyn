@@ -14,6 +14,35 @@ defmodule Lyn.ObjectText do
     timestamps
   end
 
+  def admin_fields do
+    [
+      id: %{
+        label: "id",
+        type: :integer
+      },
+      name: %{
+        label: "name",
+        type: :string
+      },
+      window_name: %{
+        label: "window_name",
+        type: :string
+      },
+      document_name: %{
+        label: "document_name",
+        type: :string
+      },
+      meta_keywords: %{
+        label: "meta_keywords",
+        type: :string
+      },
+      meta_description: %{
+        label: "meta_description",
+        type: :string
+      }
+    ]
+  end
+
   @required_fields ~w(language_id object_id name window_name document_name meta_keywords meta_description)
   @optional_fields ~w()
 

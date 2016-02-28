@@ -30,6 +30,11 @@ defmodule Lyn.Object do
         label: "id",
         type: :integer
       },
+      object_texts: %{
+        label: "object_texts",
+        type: :object_texts,
+        model: Lyn.ObjectText
+      },
       site_id: %{
         label: "site_id",
         type: :integer

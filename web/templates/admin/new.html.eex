@@ -1,5 +1,5 @@
 <h2>New entry</h2>
 
-<%= render "form.html", changeset: @changeset, columns: @columns, action: admin_path(@conn, :create, @resource) %>
+<%= render "form.html", changeset: @changeset, languages: @languages, columns: @columns, action: admin_path(@conn, :create, @resource) %>
 
 <%= link "Back", to: admin_path(@conn, :index, @resource) %>

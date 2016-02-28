@@ -2,6 +2,7 @@
 
 <%= render "form.html", changeset: @changeset,
                         columns: @columns,
+                        languages: @languages,
                         action: admin_path(@conn, :update, @resource, @entry) %>
 
 <%= link "Back", to: admin_path(@conn, :index, @resource) %>
