@@ -65,7 +65,22 @@ defmodule Lyn.Mixfile do
 
   defp package do
     [# These are the default files included in the package
-     files: ["config", "lib", "priv", "test", "web", "mix.exs", "README*", "readme*", "LICENSE*", "license*"],
+     files: [
+       "config",
+       "docs",
+       "lib",
+       "priv",
+       "test",
+       "web",
+       ".babelrc",
+       ".eslint*",
+       ".iex.exs",
+       "mix.exs",
+       "package.json",
+       "webpack.config.js",
+       "README*",
+       "LICENSE*"
+     ],
      maintainers: ["Valerii Iatsko"],
      licenses: ["MIT"],
      links: %{"GitHub" => "https://github.com/viatsko/lyn",
