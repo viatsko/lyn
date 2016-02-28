@@ -171,8 +171,6 @@ defmodule Lyn.AdminController do
         case Repo.insert(changeset) do
           {:ok, _entry} ->
             current = [_entry]
-          {:error, changeset} ->
-
         end
       end
 
