@@ -112,6 +112,7 @@ defmodule Lyn.AdminController do
     model = models[resource]
 
     entry = Repo.get!(model, id)
+    
     changeset = model.changeset(entry, entry_params)
 
     case Repo.update(changeset) do
