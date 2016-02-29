@@ -41,7 +41,7 @@ defmodule Lyn.Mixfile do
      {:phoenix_ecto, "~> 2.0.1"},
      {:phoenix_html, "~> 2.5.0"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
-     {:scrivener, "~> 1.0"},
+     {:scrivener, "~> 1.1.2"},
      {:gettext, "~> 0.10.0"},
      {:cowboy, "~> 1.0.4"}]
   end
