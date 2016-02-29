@@ -76,7 +76,7 @@ defmodule Lyn.Object do
     ]
   end
 
-  @required_fields ~w(parent_id site_id is_published is_show_on_site_map is_show_in_menu sort_order path url full_path)
+  @required_fields ~w(parent_id site_id is_published is_show_on_site_map is_show_in_menu sort_order path url full_path object_texts)
   @optional_fields ~w()
 
   @doc """
