@@ -12,7 +12,8 @@ defmodule Lyn.Mixfile do
      aliases: aliases,
      description: description,
      package: package,
-     deps: deps]
+     deps: deps,
+     docs: docs]
   end
 
   # Configuration for the OTP application.
@@ -63,6 +64,15 @@ defmodule Lyn.Mixfile do
     """
     Elixir CMS
     """
+  end
+
+  defp docs do
+    [
+      extras: [
+        "README.md",
+        "CONTRIBUTING.md"
+      ]
+    ]
   end
 
   defp package do
