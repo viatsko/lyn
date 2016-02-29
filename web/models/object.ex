@@ -2,7 +2,7 @@ defmodule Lyn.Object do
   use Lyn.Web, :model
 
   schema "objects" do
-    field :sort_order, :integer
+    field :sort_order, :integer, default: 0
     field :parent_id, :integer, default: 0
     field :thread_id, :integer, default: 0
     field :nesting, :integer, default: 0
