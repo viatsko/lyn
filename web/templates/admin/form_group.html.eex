@@ -10,8 +10,6 @@
           :datetime -> datetime_select @f, @id, class: "form-control"
           :string -> text_input @f, @id, class: "form-control"
           :hidden -> hidden_input @f, @id
-          _ ->
-
         end
     %>
     <%= if @column.type != :hidden do %>
