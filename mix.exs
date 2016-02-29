@@ -43,7 +43,7 @@ defmodule Lyn.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:scrivener, "~> 1.0"},
      {:gettext, "~> 0.9"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0.4"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
