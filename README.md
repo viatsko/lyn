@@ -42,6 +42,11 @@ Start Phoenix endpoint with `mix phoenix.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
+**Notice** currently I didn't include scripts to install starter database,
+but make sure you at least created some languages in admin panel (/admin/languages)
+before working with objects tree. Installation scripts coming soon once object
+tree will be ready.
+
 ## Deploying
 Ready to run in production? Please [check Phoenix Framework deployment guides](http://www.phoenixframework.org/docs/deployment).
 
