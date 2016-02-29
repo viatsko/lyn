@@ -1,6 +1,9 @@
 # Node
 npm-debug.log
 
+# ex_doc
+/doc
+
 # App artifacts
 /_build
 /db
