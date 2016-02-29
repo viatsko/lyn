@@ -198,6 +198,9 @@ defmodule Lyn.AdminController do
     assign(conn, :object_tree, object_tree_list)
   end
 
+  # Generates specified model and checks if it has admin_outer_texts
+  # property. If so, it will fetch outer_texts by the number of languages
+  # specified.
   defp generate_model_map(conn, model) do
     case function_exported?(model, :admin_outer_texts, 0) do
       true ->
