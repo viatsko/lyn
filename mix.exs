@@ -35,6 +35,7 @@ defmodule Lyn.Mixfile do
     [{:comeonin, "~> 2.1.1"},
      {:inflex, "~> 1.5.0"},
      {:json, "~> 0.3.3"},
+     {:earmark, "~> 0.2.1", only: :dev},
      {:ex_doc, "~> 0.11.4", only: :dev},
      {:ex_machina, "~> 0.6.1", only: :test},
      {:phoenix, "~> 1.1.4"},
