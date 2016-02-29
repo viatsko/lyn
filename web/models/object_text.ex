@@ -47,8 +47,8 @@ defmodule Lyn.ObjectText do
     ]
   end
 
-  @required_fields ~w(language_id object_id name window_name document_name meta_keywords meta_description)
-  @optional_fields ~w()
+  @required_fields ~w(language_id name window_name document_name meta_keywords meta_description)
+  @optional_fields ~w(object_id)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
