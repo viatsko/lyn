@@ -58,6 +58,7 @@ defmodule Lyn.AdminController do
 
         render(conn, "index.html", entries: entries,
                                    columns: model.admin_fields,
+                                   model: model,
                                    resource: resource,
                                    sort: sort,
                                    direction: direction)
@@ -67,7 +68,9 @@ defmodule Lyn.AdminController do
   def new(conn, %{"resource" => resource}) do
     model = models[resource]
 
-    changeset = model.changeset(struct(model))
+    model_map = struct(model)
+
+    changeset = model.changeset(model_map)
 
     render(conn, "new.html", changeset: changeset, model: model, resource: resource)
   end
