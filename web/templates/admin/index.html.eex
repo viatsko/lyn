@@ -4,10 +4,11 @@
   <thead class="thead-default">
     <tr>
       <%
-        if @direction == "asc" do
-          new_direction = "desc"
-        else
-          new_direction = "asc"
+        new_direction = case @direction do
+          "asc" ->
+            "desc"
+          _ ->
+            "asc"
         end
       %>
       <%= for {id, column} <- @model.admin_fields do %>
