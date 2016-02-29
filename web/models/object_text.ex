@@ -22,7 +22,7 @@ defmodule Lyn.ObjectText do
       },
       language_id: %{
         label: "language_id",
-        type: :integer
+        type: :hidden
       },
       name: %{
         label: "name",

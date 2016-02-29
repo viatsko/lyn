@@ -1,16 +1,21 @@
 <%= unless @id == @skip_id || @id == :sort_order ||
            @id == :inserted_at || @id == :updated_at do %>
   <div class="form-group">
-    <%= label @f, @column.label, class: "control-label" %>
+    <%= if @column.type != :hidden do %>
+      <%= label @f, @column.label, class: "control-label" %>
+    <% end %>
     <%= case @column.type do
           :boolean -> checkbox @f, @id, class: "form-control"
           :integer -> number_input @f, @id, class: "form-control"
           :datetime -> datetime_select @f, @id, class: "form-control"
           :string -> text_input @f, @id, class: "form-control"
+          :hidden -> hidden_input @f, @id
           _ ->
 
         end
     %>
-    <%= error_tag @f, @id %>
+    <%= if @column.type != :hidden do %>
+      <%= error_tag @f, @id %>
+    <% end %>
   </div>
 <% end %>
