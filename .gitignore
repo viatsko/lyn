@@ -1,6 +1,9 @@
 # Node
 npm-debug.log
 
+# Mix
+mix.lock
+
 # ex_doc
 /doc
 
