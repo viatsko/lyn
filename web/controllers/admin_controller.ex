@@ -68,7 +68,7 @@ defmodule Lyn.AdminController do
   def new(conn, %{"resource" => resource}) do
     model = models[resource]
 
-    model_map = struct(model)
+    model_map = generate_model_map(conn, model)
 
     changeset = model.changeset(model_map)
 
@@ -196,5 +196,22 @@ defmodule Lyn.AdminController do
 
     # Throwing object_tree to frontend
     assign(conn, :object_tree, object_tree_list)
+  end
+
+  defp generate_model_map(conn, model) do
+    case function_exported?(model, :admin_outer_texts, 0) do
+      true ->
+        outer_texts = for language <- conn.assigns[:languages] do
+          struct(model.admin_outer_texts.model, %{
+            :language_id => language.id
+          })
+        end
+
+        struct(model, %{
+          model.admin_outer_texts.assoc => outer_texts
+        })
+      _ ->
+        struct(model)
+    end
   end
 end
