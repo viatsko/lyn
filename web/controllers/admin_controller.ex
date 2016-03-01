@@ -155,7 +155,11 @@ defmodule Lyn.AdminController do
   end
 
   defp assign_languages(conn, _params) do
-    assign(conn, :languages, Repo.all(Language))
+    query = from(l in Language, order_by: l.sort_order)
+
+    languages = Repo.all(query)
+
+    assign(conn, :languages, languages)
   end
 
   defp object_tree(conn, _params) do
