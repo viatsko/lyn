@@ -13,6 +13,8 @@ first_language_id = List.first(@languages).id
   <% end %>
 
   <%= if Kernel.function_exported?(@model, :admin_outer_texts, 0) do %>
+    <br /><hr /><br />
+
     <ul class="nav nav-tabs" role="tablist">
       <%= for language <- @languages do %>
         <li class="nav-item">
@@ -38,6 +40,8 @@ first_language_id = List.first(@languages).id
         </div>
       <% end %>
     </div>
+
+    <br /><hr /><br />
   <% end %>
 
   <div class="form-group">
