@@ -177,7 +177,7 @@ defmodule Lyn.AdminController do
       # If we don't have objects in current site,
       # create one
       if current_size === 0 do
-        changeset = Object.changeset(%Object{}, %{
+        changeset = Object.changeset(struct(Object), %{
           "site_id" => site.id,
           "parent_id" => 0,
           "is_published" => true,
