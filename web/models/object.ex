@@ -39,7 +39,7 @@ defmodule Lyn.Object do
       },
       site_id: %{
         label: "site_id",
-        type: :integer
+        type: :hidden
       },
       parent_id: %{
         label: "parent_id",

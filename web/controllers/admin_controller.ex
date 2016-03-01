@@ -65,14 +65,23 @@ defmodule Lyn.AdminController do
     end
   end
 
-  def new(conn, %{"resource" => resource}) do
-    model = models[resource]
+  def new(conn, params) do
+    resource = params["resource"]
 
-    model_map = generate_model_map(conn, model)
+    case Map.has_key?(params, "site_id") do
+      true ->
+        site_id = params["site_id"]
 
-    changeset = model.changeset(model_map)
+        model = models[resource]
 
-    render(conn, "new.html", changeset: changeset, model: model, resource: resource)
+        model_map = generate_model_map(conn, model, site_id)
+
+        changeset = model.changeset(model_map)
+
+        render(conn, "new.html", changeset: changeset, model: model, resource: resource)
+      _ ->
+        conn.redirect(to: admin_path(conn, :index, resource))
+    end
   end
 
   def create(conn, params) do
@@ -202,10 +211,14 @@ defmodule Lyn.AdminController do
     assign(conn, :object_tree, object_tree_list)
   end
 
+  defp generate_model_map(conn, model) do
+    generate_model_map(conn, model, 0)
+  end
+
   # Generates specified model and checks if it has admin_outer_texts
   # property. If so, it will fetch outer_texts by the number of languages
   # specified.
-  defp generate_model_map(conn, model) do
+  defp generate_model_map(conn, model, site_id) do
     case function_exported?(model, :admin_outer_texts, 0) do
       true ->
         outer_texts = for language <- conn.assigns[:languages] do
@@ -215,7 +228,8 @@ defmodule Lyn.AdminController do
         end
 
         struct(model, %{
-          model.admin_outer_texts.assoc => outer_texts
+          model.admin_outer_texts.assoc => outer_texts,
+          :site_id => site_id
         })
       _ ->
         struct(model)
