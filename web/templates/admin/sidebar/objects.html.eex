@@ -16,6 +16,13 @@
       </a>
     </li>
   <% end %>
+  <li class="nav-item">
+    <a class="nav-link <%= active_class(@conn, admin_path(@conn, :new, "objects", site_id: site.id)) %>"
+       href="<%= admin_path(@conn, :new, "objects", site_id: site.id) %>"
+    >
+      <i class="fa fa-plus"></i> New Object <span class="sr-only">(current)</span>
+    </a>
+  </li>
   <hr />
 <% end %>
 </ul>
