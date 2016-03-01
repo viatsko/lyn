@@ -37,11 +37,11 @@ module.exports = {
     loaders: [
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "url-loader?limit=10000&minetype=application/font-woff"
+        loader: "url-loader?limit=10000&minetype=application/font-woff&name=./css/[hash].[ext]"
       },
       {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "file-loader"
+        loader: "file-loader?name=./css/[hash].[ext]"
       },
       {
         test: /\.js$/,
@@ -51,7 +51,9 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("css?sourceMap!postcss!sass?outputStyle=expanded&sourceMap&sourceMapContents")
+        loader: ExtractTextPlugin.extract("css?sourceMap!postcss!sass?outputStyle=expanded&sourceMap&sourceMapContents", {
+          publicPath: '../'
+        })
       },
     ],
   },
