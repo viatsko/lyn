@@ -1,3 +1,6 @@
+<%
+first_language_id = List.first(@languages).id
+%>
 <%= form_for @changeset, @action, fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
@@ -5,20 +8,36 @@
     </div>
   <% end %>
 
-  <%= if Kernel.function_exported?(@model, :admin_outer_texts, 0) do %>
-    <%= inputs_for f, @model.admin_outer_texts.assoc, fn of -> %>
-      <div class="card">
-        <div class="card-block">
-          <%= for {id, column} <- @model.admin_outer_texts.model.admin_fields do %>
-            <%= render "form_group.html", f: of, skip_id: :id, id: id, column: column %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-
   <%= for {id, column} <- @model.admin_fields do %>
     <%= render "form_group.html", f: f, skip_id: :id, id: id, column: column %>
+  <% end %>
+
+  <%= if Kernel.function_exported?(@model, :admin_outer_texts, 0) do %>
+    <ul class="nav nav-tabs" role="tablist">
+      <%= for language <- @languages do %>
+        <li class="nav-item">
+          <a class="nav-link <%= if first_language_id === language.id do %>active<% end %>" data-toggle="tab" href="#outer_text_<%= language.id %>" role="tab">
+            <%= language.name %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+
+    <br />
+
+    <div class="tab-content">
+      <%= inputs_for f, @model.admin_outer_texts.assoc, fn of -> %>
+        <div class="tab-pane <%= if first_language_id === of.data.language_id do %>active<% end %>" id="outer_text_<%= of.data.language_id %>" role="tabpanel">
+          <div class="card">
+            <div class="card-block">
+              <%= for {id, column} <- @model.admin_outer_texts.model.admin_fields do %>
+                <%= render "form_group.html", f: of, skip_id: :id, id: id, column: column %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   <% end %>
 
   <div class="form-group">
