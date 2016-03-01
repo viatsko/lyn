@@ -64,19 +64,11 @@ defmodule Lyn.Object do
       path: %{
         label: "path",
         type: :string
-      },
-      url: %{
-        label: "url",
-        type: :string
-      },
-      full_path: %{
-        label: "full_path",
-        type: :string
       }
     ]
   end
 
-  @required_fields ~w(parent_id site_id is_published is_show_on_site_map is_show_in_menu sort_order path url full_path object_texts)
+  @required_fields ~w(parent_id site_id is_published is_show_on_site_map is_show_in_menu sort_order path object_texts)
   @optional_fields ~w()
 
   @doc """
