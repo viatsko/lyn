@@ -80,7 +80,7 @@ defmodule Lyn.AdminController do
 
         render(conn, "new.html", changeset: changeset, model: model, resource: resource)
       _ ->
-        conn.redirect(to: admin_path(conn, :index, resource))
+        redirect(conn, to: admin_path(conn, :index, resource))
     end
   end
 
