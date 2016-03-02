@@ -27,3 +27,10 @@ import_config "#{Mix.env}.exs"
 config :phoenix, :generators,
   migration: true,
   binary_id: false
+
+# Configure ueberauth
+config :ueberauth, Ueberauth,
+  providers: [
+    facebook: { Ueberauth.Strategy.Facebook, [ opt1: "value", opts2: "value" ] },
+    github: { Ueberauth.Strategy.Github, [ opt1: "value", opts2: "value" ] }
+  ]
