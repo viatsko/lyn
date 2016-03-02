@@ -13,8 +13,13 @@ defmodule Lyn.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :session_auth do
+    plug Guardian.Plug.VerifySession
+    plug Guardian.Plug.LoadResource
+  end
+
   scope "/", Lyn do
-    pipe_through :browser # Use the default browser stack
+    pipe_through [:browser, :session_auth] # Use the default browser stack
 
     # Static
     get "/", PageController, :index
@@ -45,7 +50,7 @@ defmodule Lyn.Router do
   end
 
   scope "/auth", Lyn do
-    pipe_through :browser
+    pipe_through [:browser, :session_auth]
 
     get "/:provider", AuthController, :request
     get "/:provider/callback", AuthController, :callback
