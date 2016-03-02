@@ -34,6 +34,7 @@ defmodule Lyn.Mixfile do
                     :ueberauth_github,
                     :ueberauth_google,
                     :ueberauth_identity,
+                    :ueberauth_slack,
                     :ueberauth_twitter]]
   end
 
@@ -65,6 +66,7 @@ defmodule Lyn.Mixfile do
      {:ueberauth_github, "~> 0.2"},
      {:ueberauth_google, "~> 0.2"},
      {:ueberauth_identity, "~> 0.2.2"},
+     {:ueberauth_slack, "~> 0.2"},
      {:ueberauth_twitter, "~> 0.2.2"}]
   end
 
