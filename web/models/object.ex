@@ -43,7 +43,7 @@ defmodule Lyn.Object do
       },
       parent_id: %{
         label: "parent_id",
-        type: :integer
+        type: :hidden
       },
       is_published: %{
         label: "is_published",
