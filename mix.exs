@@ -48,6 +48,7 @@ defmodule Lyn.Mixfile do
   defp deps do
     [{:comeonin, "~> 2.1.1"},
      {:cowboy, "~> 1.0.4"},
+     {:dogma, "~> 0.1.1", only: :dev},
      {:earmark, "~> 0.2.1", only: :dev},
      {:ex_doc, "~> 0.11.4", only: :dev},
      {:ex_machina, "~> 0.6.1", only: :test},
