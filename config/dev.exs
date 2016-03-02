@@ -56,3 +56,9 @@ end
 # Configure dogma
 config :dogma,
   rule_set: Dogma.RuleSet.All
+
+# Finally import the config/dev.secret.exs
+# which should be versioned separately.
+if File.exists?("config/dev.secret.exs") do
+  import_config "dev.secret.exs"
+end
