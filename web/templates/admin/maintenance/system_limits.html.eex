@@ -1,5 +1,12 @@
 <h1>System Limits</h1>
 
+<h2>Elixir</h2>
+<p>Version: <%= @build_info.version %><br />
+<%= if @build_info.revision !== "" do %>
+Revision: <%= @build_info.revision %><br />
+<% end %>
+Date: <%= @build_info.date %></p>
+
 <h2>Environment variables</h2>
 <%= for {key, value} <- @env do %>
   <strong><%= key %></strong>=<%= value %><br />
