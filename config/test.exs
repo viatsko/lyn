@@ -28,3 +28,9 @@ else
     hostname: "localhost",
     pool: Ecto.Adapters.SQL.Sandbox
 end
+
+# Finally import the config/test.secret.exs
+# which should be versioned separately.
+if File.exists?("config/test.secret.exs") do
+  import_config "test.secret.exs"
+end
