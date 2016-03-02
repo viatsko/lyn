@@ -70,7 +70,9 @@ defmodule Lyn.Mixfile do
 
   defp description do
     """
-    Elixir CMS
+    This is a CMS written in Elixir. Aims to be the great open-source ecommerce and/or startup
+    solution for those who are searching for a performance and stability on top of modern technologies
+    like React and Elixir.
     """
   end
 
