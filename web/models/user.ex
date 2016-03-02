@@ -7,6 +7,7 @@ defmodule Lyn.User do
     field :username, :string
     field :email, :string
     field :password_digest, :string
+    field :avatar, :string
 
     belongs_to :role, Lyn.Role
 
@@ -25,6 +26,10 @@ defmodule Lyn.User do
       },
       username: %{
         label: "username",
+        type: :string
+      },
+      avatar: %{
+        label: "avatar",
         type: :string
       },
       email: %{
