@@ -33,7 +33,8 @@ config :ueberauth, Ueberauth,
   base_path: "/auth",
   providers: [
     facebook: { Ueberauth.Strategy.Facebook, [] },
-    github: { Ueberauth.Strategy.Github, [] }
+    github: { Ueberauth.Strategy.Github, [] },
+    twitter: { Ueberauth.Strategy.Twitter, [] }
   ]
 
 # Configure ueberauth_facebook
@@ -45,3 +46,8 @@ config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   client_id: System.get_env("GITHUB_CLIENT_ID"),
   client_secret: System.get_env("GITHUB_CLIENT_SECRET")
+
+# Configure ueberauth_twitter
+config :ueberauth, Ueberauth.Strategy.Twitter.OAuth,
+  consumer_key: System.get_env("TWITTER_CONSUMER_KEY"),
+  consumer_secret: System.get_env("TWITTER_CONSUMER_SECRET")
