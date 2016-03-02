@@ -30,7 +30,18 @@ config :phoenix, :generators,
 
 # Configure ueberauth
 config :ueberauth, Ueberauth,
+  base_path: "/auth",
   providers: [
-    facebook: { Ueberauth.Strategy.Facebook, [ opt1: "value", opts2: "value" ] },
-    github: { Ueberauth.Strategy.Github, [ opt1: "value", opts2: "value" ] }
+    facebook: { Ueberauth.Strategy.Facebook, [] },
+    github: { Ueberauth.Strategy.Github, [] }
   ]
+
+# Configure ueberauth_facebook
+config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
+  client_id: System.get_env("FACEBOOK_CLIENT_ID"),
+  client_secret: System.get_env("FACEBOOK_CLIENT_SECRET")
+
+# Configure ueberauth_github
+config :ueberauth, Ueberauth.Strategy.Github.OAuth,
+  client_id: System.get_env("GITHUB_CLIENT_ID"),
+  client_secret: System.get_env("GITHUB_CLIENT_SECRET")
