@@ -44,6 +44,13 @@ defmodule Lyn.Router do
     post "/admin/:resource/batch_action", AdminController, :batch_action
   end
 
+  scope "/auth", Lyn do
+    pipe_through :browser
+
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", Lyn do
   #   pipe_through :api
