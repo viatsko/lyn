@@ -31,7 +31,8 @@ defmodule Lyn.Mixfile do
                     :comeonin,
                     :ueberauth,
                     :ueberauth_facebook,
-                    :ueberauth_github]]
+                    :ueberauth_github,
+                    :ueberauth_twitter]]
   end
 
   # Specifies which paths to compile per environment.
@@ -58,7 +59,8 @@ defmodule Lyn.Mixfile do
      {:scrivener, "~> 1.1.2"},
      {:ueberauth, "~> 0.2"},
      {:ueberauth_facebook, "~> 0.3.2"},
-     {:ueberauth_github, "~> 0.2"}]
+     {:ueberauth_github, "~> 0.2"},
+     {:ueberauth_twitter, "~> 0.2.2"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
