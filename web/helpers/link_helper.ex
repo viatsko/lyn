@@ -5,7 +5,7 @@ defmodule Lyn.LinkHelper do
     path = Enum.at(conn.path_info, 1)
 
     if !path do
-      nil
+      "objects.html"
     else
       path = path <> ".html"
 
@@ -14,7 +14,7 @@ defmodule Lyn.LinkHelper do
       if File.exists?(eex_path) do
         path
       else
-        nil
+        "objects.html"
       end
     end
   end
