@@ -51,6 +51,7 @@ defmodule Lyn.Mixfile do
      {:gettext, "~> 0.10.0"},
      {:inflex, "~> 1.5.0"},
      {:json, "~> 0.3.3"},
+     {:oauth, github: "tim/erlang-oauth"},
      {:phoenix, "~> 1.1.4"},
      {:phoenix_ecto, "~> 2.0.1"},
      {:phoenix_html, "~> 2.5.0"},
