@@ -1,10 +1,10 @@
-<ul class="nav nav-pills nav-stacked ">
+<ul class="nav nav-pills nav-stacked nav-sidebar">
 <%= for site <- @object_tree do %>
   <li class="nav-item">
-    <a class="nav-link <%= active_class(@conn, admin_path(@conn, :edit, "sites", site.id)) %>"
+    <a class="nav-link site-name <%= active_class(@conn, admin_path(@conn, :edit, "sites", site.id)) %>"
        href="<%= admin_path(@conn, :edit, "sites", site.id) %>"
     >
-      site &rarr; <%= site.name %> <span class="sr-only">(current)</span>
+      <%= site.name %> <span class="sr-only">(current)</span>
     </a>
   </li>
   <%= for object <- site.children do %>
