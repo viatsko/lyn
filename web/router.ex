@@ -27,8 +27,10 @@ defmodule Lyn.Router do
     get "/", PageController, :index
 
     # Authentication
+    delete "/logout", AuthController, :logout
     resources "/users", UserController
-    resources "/sessions", SessionController, only: [:new, :create, :delete]
+    resources "/authorizations", AuthorizationController
+    resources "/tokens", TokenController
 
     get "/admin", AdminController, :dashboard
 
@@ -54,10 +56,10 @@ defmodule Lyn.Router do
   scope "/auth", Lyn do
     pipe_through [:browser, :session_auth]
 
-    get "/:provider", AuthController, :request
-    get "/:provider/callback", AuthController, :callback
-    post "/:provider/callback", AuthController, :callback
-    delete "/logout", AuthController, :delete
+
+    get "/:identity", AuthController, :login
+    get "/:identity/callback", AuthController, :callback
+    post "/:identity/callback", AuthController, :callback
   end
 
   # Other scopes may use custom stacks.
