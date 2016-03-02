@@ -26,7 +26,7 @@ defmodule Lyn.AuthController do
         conn
         |> put_flash(:info, "Signed in as #{user.name}")
         |> Guardian.Plug.sign_in(user, :token, perms: %{default: Guardian.Permissions.max})
-        |> redirect(to: private_page_path(conn, :index))
+        |> redirect(to: page_path(conn, :index))
       {:error, _reason} ->
         conn
         |> put_flash(:error, "Could not authenticate")

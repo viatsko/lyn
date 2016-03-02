@@ -1,4 +1,4 @@
-defmodule Lyn.RedirectHelper do
+defmodule Lyn.Controller.Helpers do
   import Plug.Conn
 
   def redirect_back(conn, alternative \\ "/") do

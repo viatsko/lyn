@@ -35,6 +35,7 @@ defmodule Lyn.Web do
       import Ecto.Query, only: [from: 1, from: 2]
 
       import Lyn.Router.Helpers
+      import Lyn.Controller.Helpers
       import Lyn.Gettext
     end
   end
@@ -55,7 +56,7 @@ defmodule Lyn.Web do
 
       import Lyn.LinkHelper
       import Lyn.SidebarHelper
-      import Lyn.RedirectHelper
+      import Lyn.AuthHelper
     end
   end
 
