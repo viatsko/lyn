@@ -40,10 +40,10 @@
           </div>
         </li>
       </ul>
-      <form class="form-inline pull-xs-right">
+      <!-- <form class="form-inline pull-xs-right">
         <input class="form-control" type="text" placeholder="Search">
         <button class="btn btn-default" type="submit">Search</button>
-      </form>
+      </form> -->
     </nav>
 
     <section class="container-fluid full-height">
