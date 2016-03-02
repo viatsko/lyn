@@ -24,6 +24,6 @@ defmodule Lyn.Admin.MaintenanceController do
   end
 
   def system_limits(conn, _params) do
-    render conn, "system_limits.html"
+    render conn, "system_limits.html", env: System.get_env()
   end
 end

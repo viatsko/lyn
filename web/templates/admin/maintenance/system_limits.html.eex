@@ -1,3 +1,6 @@
 <h1>System Limits</h1>
 
-<p>System Limits</p>
+<h2>Environment variables</h2>
+<%= for {key, value} <- @env do %>
+  <strong><%= key %></strong>=<%= value %><br />
+<% end %>
