@@ -30,7 +30,8 @@ defmodule Lyn.Mixfile do
                     :postgrex,
                     :comeonin,
                     :ueberauth,
-                    :ueberauth_facebook]]
+                    :ueberauth_facebook,
+                    :ueberauth_github]]
   end
 
   # Specifies which paths to compile per environment.
@@ -56,7 +57,8 @@ defmodule Lyn.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:scrivener, "~> 1.1.2"},
      {:ueberauth, "~> 0.2"},
-     {:ueberauth_facebook, "~> 0.3.2"}]
+     {:ueberauth_facebook, "~> 0.3.2"},
+     {:ueberauth_github, "~> 0.2"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
