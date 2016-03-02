@@ -39,6 +39,10 @@ Before you begin we recommend you read about the basic building blocks that asse
 The last step might take a very long time since we are using some dependencies
 from github (like Bootstrap 4).
 
+## Configuration
+You can create `#{ENV}.config.exs` files in `config/` directories, they will be
+included after running initial config files: `config.exs` and `#{ENV}.config.exs`.
+
 ## Running
 Start Phoenix endpoint with `mix phoenix.server`
 
