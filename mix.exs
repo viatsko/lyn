@@ -53,6 +53,7 @@ defmodule Lyn.Mixfile do
      {:ex_doc, "~> 0.11.4", only: :dev},
      {:ex_machina, "~> 0.6.1", only: :test},
      {:gettext, "~> 0.10.0"},
+     {:guardian_db, "0.4.0"},
      {:guardian, "~> 0.10.1"},
      {:inflex, "~> 1.5.0"},
      {:json, "~> 0.3.3"},
