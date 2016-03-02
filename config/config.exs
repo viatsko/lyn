@@ -70,11 +70,26 @@ config :ueberauth, Ueberauth.Strategy.Twitter.OAuth,
   consumer_key: System.get_env("TWITTER_CONSUMER_KEY"),
   consumer_secret: System.get_env("TWITTER_CONSUMER_SECRET")
 
+# Configure guardian
 config :guardian, Guardian,
   issuer: "Lyn.#{Mix.env}",
   ttl: { 30, :days },
+  verify_issuer: true,
   serializer: Lyn.GuardianSerializer,
-  secret_key: to_string(Mix.env)
+  secret_key: to_string(Mix.env),
+  hooks: GuardianDb,
+  permissions: %{
+    default: [
+      :read_profile,
+      :write_profile,
+      :read_token,
+      :revoke_token,
+    ],
+  }
+
+# Configure guardian_db
+config :guardian_db, GuardianDb,
+       repo: PhoenixGuardian.Repo
 
 # Configure dogma
 config :dogma,
