@@ -35,6 +35,11 @@ config :ueberauth, Ueberauth,
     facebook: { Ueberauth.Strategy.Facebook, [] },
     github: { Ueberauth.Strategy.Github, [] },
     google: { Ueberauth.Strategy.Google, [] },
+    identity: { Ueberauth.Strategy.Identity, [
+      callback_methods: ["POST"],
+      uid_field: :username,
+      nickname_field: :username,
+    ] },
     slack: { Ueberauth.Strategy.Slack, [] },
     twitter: { Ueberauth.Strategy.Twitter, [] }
   ]
