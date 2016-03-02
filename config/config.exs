@@ -35,6 +35,7 @@ config :ueberauth, Ueberauth,
     facebook: { Ueberauth.Strategy.Facebook, [] },
     github: { Ueberauth.Strategy.Github, [] },
     google: { Ueberauth.Strategy.Google, [] },
+    slack: { Ueberauth.Strategy.Slack, [] },
     twitter: { Ueberauth.Strategy.Twitter, [] }
   ]
 
@@ -53,6 +54,11 @@ config :ueberauth, Ueberauth.Strategy.Google.OAuth,
   client_id: System.get_env("GOOGLE_CLIENT_ID"),
   client_secret: System.get_env("GOOGLE_CLIENT_SECRET"),
   redirect_uri: System.get_env("GOOGLE_REDIRECT_URI")
+
+# Configure ueberauth_slack
+config :ueberauth, Ueberauth.Strategy.Slack.OAuth,
+  client_id: System.get_env("SLACK_CLIENT_ID"),
+  client_secret: System.get_env("SLACK_CLIENT_SECRET")
 
 # Configure ueberauth_twitter
 config :ueberauth, Ueberauth.Strategy.Twitter.OAuth,
