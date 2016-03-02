@@ -70,6 +70,7 @@ Main author and active maintainer is Valerii Iatsko, feel free to follow:
 * [Twitter](https://twitter.com/viatsko)
 * [GitHub](https://github.com/viatsko)
 
-Without these it would be impossible to create Lyn:
+Based on some code from these projects:
+* [Phoenix Guardian](https://github.com/hassox/phoenix_guardian) by [@hassox](https://github.com/hassox)
 * [PxBlog tutorial](https://github.com/Diamond/pxblog) by [@Diamond](https://github.com/Diamond)
 * [Ex Admin](https://github.com/smpallen99/ex_admin) by [@smpallen99](https://github.com/smpallen99)
