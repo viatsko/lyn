@@ -54,6 +54,7 @@ defmodule Lyn.Web do
       import Lyn.Gettext
 
       import Lyn.LinkHelper
+      import Lyn.SidebarHelper
     end
   end
 
