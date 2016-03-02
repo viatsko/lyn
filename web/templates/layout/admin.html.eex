@@ -18,9 +18,6 @@
     <nav class="navbar navbar-dark navbar-main navbar-fixed-top bg-inverse">
       <a class="navbar-brand" href="/admin">Lyn Admin</a>
       <ul class="nav navbar-nav">
-        <li class="nav-item <%= active_class(@conn, admin_path(@conn, :index, "objects")) %>">
-          <a class="nav-link" href="<%= admin_path(@conn, :index, "objects") %>">Objects <span class="sr-only">(current)</span></a>
-        </li>
         <li class="nav-item <%= active_class(@conn, admin_path(@conn, :index, "users")) %>">
           <a class="nav-link" href="<%= admin_path(@conn, :index, "users") %>">Users <span class="sr-only">(current)</span></a>
         </li>
