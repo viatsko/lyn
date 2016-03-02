@@ -70,6 +70,12 @@ config :ueberauth, Ueberauth.Strategy.Twitter.OAuth,
   consumer_key: System.get_env("TWITTER_CONSUMER_KEY"),
   consumer_secret: System.get_env("TWITTER_CONSUMER_SECRET")
 
+config :guardian, Guardian,
+  issuer: "Lyn.#{Mix.env}",
+  ttl: { 30, :days },
+  serializer: Lyn.GuardianSerializer,
+  secret_key: to_string(Mix.env)
+
 # Configure dogma
 config :dogma,
   rule_set: Dogma.RuleSet.All
