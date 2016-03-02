@@ -69,3 +69,7 @@ config :ueberauth, Ueberauth.Strategy.Slack.OAuth,
 config :ueberauth, Ueberauth.Strategy.Twitter.OAuth,
   consumer_key: System.get_env("TWITTER_CONSUMER_KEY"),
   consumer_secret: System.get_env("TWITTER_CONSUMER_SECRET")
+
+# Configure dogma
+config :dogma,
+  rule_set: Dogma.RuleSet.All
