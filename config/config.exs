@@ -34,6 +34,7 @@ config :ueberauth, Ueberauth,
   providers: [
     facebook: { Ueberauth.Strategy.Facebook, [] },
     github: { Ueberauth.Strategy.Github, [] },
+    google: { Ueberauth.Strategy.Google, [] },
     twitter: { Ueberauth.Strategy.Twitter, [] }
   ]
 
@@ -46,6 +47,12 @@ config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   client_id: System.get_env("GITHUB_CLIENT_ID"),
   client_secret: System.get_env("GITHUB_CLIENT_SECRET")
+
+# Configure ueberauth_google
+config :ueberauth, Ueberauth.Strategy.Google.OAuth,
+  client_id: System.get_env("GOOGLE_CLIENT_ID"),
+  client_secret: System.get_env("GOOGLE_CLIENT_SECRET"),
+  redirect_uri: System.get_env("GOOGLE_REDIRECT_URI")
 
 # Configure ueberauth_twitter
 config :ueberauth, Ueberauth.Strategy.Twitter.OAuth,
