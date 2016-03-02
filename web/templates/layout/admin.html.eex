@@ -53,7 +53,10 @@
         %>
         <%= if sidebar_file do %>
           <aside id="sidebar">
-            <%= render Lyn.Admin.SidebarView, sidebar_file, assigns %>
+            <div class="sidebar-menu">
+              <%= render Lyn.Admin.SidebarView, sidebar_file, assigns %>
+            </div>
+            <%= render Lyn.Admin.SidebarView, "_footer.html" %>
           </aside>
         <% end %>
         <div id="main" <%= if !sidebar_file do %>class="full-width"<% end %>>

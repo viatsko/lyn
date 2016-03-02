@@ -17,13 +17,12 @@ body {
 /* Phoenix flash messages */
 .alert:empty { display: none; }
 
-#sidebar,
 #main {
   padding: 15px;
 }
 
 #main {
-  margin-left: 220px;
+  margin-left: 230px;
   padding-top: 59px;
 
   &.full-width {
@@ -36,7 +35,7 @@ body {
   position: fixed;
   z-index: 1;
   min-height: 100%;
-  width: 220px;
+  width: 230px;
   padding-top: 59px;
 
   // border-top: 1px solid #fff;

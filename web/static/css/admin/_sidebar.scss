@@ -1,0 +1,29 @@
+.sidebar-menu {
+  padding: 15px;
+}
+
+.sidebar-footer {
+  bottom: 0px;
+  clear: both;
+  display: block;
+  padding: 5px 0 0 0;
+  position: fixed;
+  width: 230px;
+  z-index: 1000;
+  // background: #2A3F54;
+}
+
+.sidebar-footer a {
+  color: white;
+  padding: 7px 0 3px;
+  text-align: center;
+  width: 25%;
+  font-size: 17px;
+  display: block;
+  float: left;
+  background: #2a2725;
+}
+
+.sidebar-footer a:hover {
+  background: #474544;
+}
