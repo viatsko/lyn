@@ -52,3 +52,7 @@ else
     hostname: "localhost",
     pool_size: 10
 end
+
+# Configure dogma
+config :dogma,
+  rule_set: Dogma.RuleSet.All

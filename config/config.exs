@@ -90,7 +90,3 @@ config :guardian, Guardian,
 # Configure guardian_db
 config :guardian_db, GuardianDb,
        repo: PhoenixGuardian.Repo
-
-# Configure dogma
-config :dogma,
-  rule_set: Dogma.RuleSet.All
