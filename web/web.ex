@@ -55,6 +55,7 @@ defmodule Lyn.Web do
 
       import Lyn.LinkHelper
       import Lyn.SidebarHelper
+      import Lyn.RedirectHelper
     end
   end
 
