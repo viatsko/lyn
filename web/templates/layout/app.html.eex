@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <%= if Guardian.Plug.current_token(@conn) do %>
+      <meta name="guardian_token" content="<%= Guardian.Plug.current_token(@conn) %>">
+    <% end %>
 
     <title>Hello Lyn!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
@@ -16,19 +19,22 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="container">
-      <header class="header">
-        <nav role="navigation">
-        </nav>
-        <span class="logo"></span>
-      </header>
+    <div class="fluid-container" role="main">
+      <%= render "_impersonation.html", conn: @conn %>
+      <div class="header">
+        <ul class="nav nav-pills pull-right btn-group-xs">
+          <%= render "_login_bar.html", current_user: @current_user, conn: @conn %>
+        </ul>
+        <h1 class="logo"></h1>
+      </div>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+      <%= if @current_user do %>
+        <%= render "_navigation.html", current_user: @current_user, conn: @conn %>
+      <% end %>
 
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
+      <%= render @view_module, @view_template, assigns %>
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
