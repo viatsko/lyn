@@ -10,7 +10,7 @@ defmodule Lyn do
       # Start the endpoint when the application starts
       supervisor(Lyn.Endpoint, []),
       # Start the Ecto repository
-      supervisor(Lyn.Repo, []),
+      supervisor(Lyn.Repo, [])
       # Here you could define other workers and supervisors as children
       # worker(Lyn.Worker, [arg1, arg2, arg3]),
     ]
@@ -19,6 +19,8 @@ defmodule Lyn do
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: Lyn.Supervisor]
     Supervisor.start_link(children, opts)
+
+    Reaxt.App.start(_type, _args)
   end
 
   # Tell Phoenix to update the endpoint configuration
