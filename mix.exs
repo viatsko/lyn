@@ -20,6 +20,8 @@ defmodule Lyn.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
+    dev_apps = Mix.env == :dev && [:reprise] || []
+
     [mod: {Lyn, []},
      applications: [:phoenix,
                     :phoenix_html,
@@ -37,7 +39,7 @@ defmodule Lyn.Mixfile do
                     :ueberauth_slack,
                     :ueberauth_twitter,
                     :exos,
-                    :poolboy]]
+                    :poolboy] ++ dev_apps]
   end
 
   # Specifies which paths to compile per environment.
@@ -68,6 +70,7 @@ defmodule Lyn.Mixfile do
      {:poison, "~> 1.5.2"},
      {:poolboy, "~> 1.5.1"},
      {:postgrex, ">= 0.0.0"},
+     {:reprise, "~> 0.5", only: :dev},
      {:scrivener, "~> 1.1.2"},
      {:ueberauth, "~> 0.2"},
      {:ueberauth_facebook, "~> 0.3.2"},
