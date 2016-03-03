@@ -18,22 +18,22 @@
     <nav class="navbar navbar-dark navbar-main navbar-fixed-top bg-inverse">
       <a class="navbar-brand" href="/admin">Lyn Admin</a>
       <ul class="nav navbar-nav">
-        <li class="nav-item <%= active_class(@conn, admin_path(@conn, :index, "users")) %>">
-          <a class="nav-link" href="<%= admin_path(@conn, :index, "users") %>">Users <span class="sr-only">(current)</span></a>
+        <li class="nav-item <%= active_class(@conn, admin_admin_path(@conn, :index, "users")) %>">
+          <a class="nav-link" href="<%= admin_admin_path(@conn, :index, "users") %>">Users <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
           System
           </a>
           <div class="dropdown-menu" aria-labelledby="Preview">
-            <a class="dropdown-item" href="<%= admin_path(@conn, :index, "object_types") %>">Object Types <span class="sr-only">(current)</span></a>
-            <a class="dropdown-item" href="<%= admin_path(@conn, :index, "languages") %>">Languages <span class="sr-only">(current)</span></a>
-            <a class="dropdown-item" href="<%= admin_path(@conn, :index, "domains") %>">Domains <span class="sr-only">(current)</span></a>
-            <a class="dropdown-item" href="<%= admin_path(@conn, :index, "sites") %>">Sites <span class="sr-only">(current)</span></a>
+            <a class="dropdown-item" href="<%= admin_admin_path(@conn, :index, "object_types") %>">Object Types <span class="sr-only">(current)</span></a>
+            <a class="dropdown-item" href="<%= admin_admin_path(@conn, :index, "languages") %>">Languages <span class="sr-only">(current)</span></a>
+            <a class="dropdown-item" href="<%= admin_admin_path(@conn, :index, "domains") %>">Domains <span class="sr-only">(current)</span></a>
+            <a class="dropdown-item" href="<%= admin_admin_path(@conn, :index, "sites") %>">Sites <span class="sr-only">(current)</span></a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="<%= sql_path(@conn, :index) %>">Sql <span class="sr-only">(current)</span></a>
+            <a class="dropdown-item" href="<%= admin_sql_path(@conn, :index) %>">Sql <span class="sr-only">(current)</span></a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="<%= maintenance_path(@conn, :index) %>">Maintenance <span class="sr-only">(current)</span></a>
+            <a class="dropdown-item" href="<%= admin_maintenance_path(@conn, :index) %>">Maintenance <span class="sr-only">(current)</span></a>
           </div>
         </li>
       </ul>

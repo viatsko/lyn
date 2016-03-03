@@ -10,7 +10,7 @@ defmodule Lyn.Authorization do
     field :password, :string, virtual: true
     field :password_confirmation, :string, virtual: true
 
-    belongs_to :user, PhoenixGuardian.User
+    belongs_to :user, Lyn.User
 
     timestamps
   end

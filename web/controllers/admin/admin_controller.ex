@@ -1,5 +1,5 @@
-defmodule Lyn.AdminController do
-  use Lyn.Web, :controller
+defmodule Lyn.Admin.AdminController do
+  use Lyn.Web, :admin_controller
 
   import Inflex
 
@@ -19,15 +19,14 @@ defmodule Lyn.AdminController do
     "users" => User
   }
 
-  plug :put_layout, "admin.html"
   plug :assign_languages
   plug :object_tree
 
-  def dashboard(conn, _params) do
+  def dashboard(conn, _params, current_user, _claims) do
     render(conn, "dashboard.html")
   end
 
-  def index(conn, params) do
+  def index(conn, params, current_user, _claims) do
     resource = params["resource"]
 
     model = models[resource]
@@ -65,7 +64,7 @@ defmodule Lyn.AdminController do
     end
   end
 
-  def new(conn, params) do
+  def new(conn, params, current_user, _claims) do
     resource = params["resource"]
 
     case Map.has_key?(params, "site_id") do
@@ -80,11 +79,11 @@ defmodule Lyn.AdminController do
 
         render(conn, "new.html", changeset: changeset, model: model, resource: resource)
       _ ->
-        redirect(conn, to: admin_path(conn, :index, resource))
+        redirect(conn, to: admin_admin_path(conn, :index, resource))
     end
   end
 
-  def create(conn, params) do
+  def create(conn, params, current_user, _claims) do
     resource = params["resource"]
 
     entry_params = params[singularize(resource)]
@@ -97,14 +96,14 @@ defmodule Lyn.AdminController do
       {:ok, _entry} ->
         conn
         |> put_flash(:info, "Entry created successfully.")
-        |> redirect(to: admin_path(conn, :index, resource))
+        |> redirect(to: admin_admin_path(conn, :index, resource))
       {:error, changeset} ->
         #throw changeset
         render(conn, "new.html", changeset: changeset, model: model, resource: resource)
     end
   end
 
-  def edit(conn, %{"resource" => resource, "id" => id}) do
+  def edit(conn, %{"resource" => resource, "id" => id}, current_user, _claims) do
     model = models[resource]
 
     entry = case function_exported?(model, :admin_outer_texts, 0) do
@@ -120,7 +119,7 @@ defmodule Lyn.AdminController do
     render(conn, "edit.html", entry: entry, changeset: changeset, model: model, resource: resource)
   end
 
-  def update(conn, params) do
+  def update(conn, params, current_user, _claims) do
     id = params["id"]
 
     resource = params["resource"]
@@ -143,13 +142,13 @@ defmodule Lyn.AdminController do
       {:ok, entry} ->
         conn
         |> put_flash(:info, "Entry updated successfully.")
-        |> redirect(to: admin_path(conn, :edit, resource, entry.id))
+        |> redirect(to: admin_admin_path(conn, :edit, resource, entry.id))
       {:error, changeset} ->
         render(conn, "edit.html", entry: entry, changeset: changeset, model: model, resource: resource)
     end
   end
 
-  def delete(conn, %{"resource" => resource, "id" => id}) do
+  def delete(conn, %{"resource" => resource, "id" => id}, current_user, _claims) do
     model = models[resource]
 
     entry = Repo.get!(model, id)
@@ -160,7 +159,7 @@ defmodule Lyn.AdminController do
 
     conn
     |> put_flash(:info, "Entry deleted successfully.")
-    |> redirect(to: admin_path(conn, :index, resource))
+    |> redirect(to: admin_admin_path(conn, :index, resource))
   end
 
   defp assign_languages(conn, _params) do

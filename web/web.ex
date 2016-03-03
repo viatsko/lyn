@@ -26,12 +26,36 @@ defmodule Lyn.Web do
     end
   end
 
+  def admin_controller do
+    quote do
+      use Phoenix.Controller, namespace: Lyn.Admin
+      use Guardian.Phoenix.Controller, key: :admin
+
+      alias Lyn.Repo
+      alias Guardian.Plug.EnsureAuthenticated
+      alias Guardian.Plug.EnsurePermissions
+
+      import Ecto
+      import Ecto.Model
+      import Ecto.Query, only: [from: 1, from: 2]
+
+      import Lyn.Router.Helpers
+      import Lyn.Controller.Helpers
+      import Lyn.Gettext
+    end
+  end
+
   def controller do
     quote do
       use Phoenix.Controller
+      use Guardian.Phoenix.Controller
 
       alias Lyn.Repo
+      alias Guardian.Plug.EnsureAuthenticated
+      alias Guardian.Plug.EnsurePermissions
+
       import Ecto
+      import Ecto.Model
       import Ecto.Query, only: [from: 1, from: 2]
 
       import Lyn.Router.Helpers

@@ -89,4 +89,4 @@ config :guardian, Guardian,
 
 # Configure guardian_db
 config :guardian_db, GuardianDb,
-       repo: PhoenixGuardian.Repo
+       repo: Lyn.Repo

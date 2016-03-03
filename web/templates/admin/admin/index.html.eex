@@ -21,7 +21,7 @@
                 local_direction = @direction
               end
             %>
-            <a href="<%= admin_path(@conn, :index, @resource, sort: id, direction: local_direction) %>"
+            <a href="<%= admin_admin_path(@conn, :index, @resource, sort: id, direction: local_direction) %>"
                class="<%= if id == @sort do %><%= if @direction == "asc" do %>down<% else %>up<% end %><% end %>">
               <%= column[:label] %>
             </a>
@@ -40,12 +40,12 @@
         <% end %>
       <% end %>
       <td class="text-right nowrap">
-        <%= link "Edit", to: admin_path(@conn, :edit, @resource, entry), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: admin_path(@conn, :delete, @resource, entry), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+        <%= link "Edit", to: admin_admin_path(@conn, :edit, @resource, entry), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: admin_admin_path(@conn, :delete, @resource, entry), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<%= link "New", to: admin_path(@conn, :new, @resource) %>
+<%= link "New", to: admin_admin_path(@conn, :new, @resource) %>
