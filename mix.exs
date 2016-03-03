@@ -64,6 +64,7 @@ defmodule Lyn.Mixfile do
      {:phoenix_html, "~> 2.5.0"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:poison, "~> 1.5.2"},
+     {:poolboy, "~> 1.5.1"},
      {:postgrex, ">= 0.0.0"},
      {:scrivener, "~> 1.1.2"},
      {:ueberauth, "~> 0.2"},
