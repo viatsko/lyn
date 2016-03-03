@@ -5,9 +5,11 @@ defmodule Lyn.User do
 
   schema "users" do
     field :username, :string
+    field :name, :string
     field :email, :string
     field :password_digest, :string
     field :avatar, :string
+    field :is_admin, :boolean
 
     belongs_to :role, Lyn.Role
 
@@ -24,6 +26,10 @@ defmodule Lyn.User do
         label: "id",
         type: :integer
       },
+      name: %{
+        label: "full name",
+        type: :string
+      },
       username: %{
         label: "username",
         type: :string
@@ -35,6 +41,10 @@ defmodule Lyn.User do
       email: %{
         label: "email",
         type: :string
+      },
+      is_admin: %{
+        label: "is_admin",
+        type: :boolean
       },
       role_id: %{
         label: "role_id",
