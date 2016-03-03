@@ -18,6 +18,9 @@ config :lyn, Lyn.Endpoint,
 config :lyn, :hot, if(Mix.env == :dev, do: :client, else: false)
 config :lyn, :pool_size, if(Mix.env == :dev, do: 1, else: 8)
 config :lyn, :pool_max_overflow, if(Mix.env == :dev, do: 5, else: 16)
+config :lyn, :global_config, %{
+  example_config: "Config In Env :global_config of app :lyn"
+}
 
 # Configures Elixir's Logger
 config :logger, :console,
