@@ -14,6 +14,13 @@ config :lyn, Lyn.Endpoint,
   pubsub: [name: Lyn.PubSub,
            adapter: Phoenix.PubSub.PG2]
 
+# React server-side rendering config
+config :lyn, :reaxt, [
+  hot: false, # false | true | :client hot compilation and loading
+  pool_size: 1, # pool size of react renderes
+  pool_max_overflow: 5 # maximum pool extension when the pool is full
+]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
