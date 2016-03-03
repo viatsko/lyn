@@ -72,6 +72,10 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
+# Reaxt
+priv/server.js
+priv/webpack.stats.json
+
 
 ###
 ### Lyn aims to be easy to use for everybody and we care that IDEs developers
