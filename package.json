@@ -3,7 +3,7 @@
   "description": "Elixir CMS",
   "author": "Valerii Iatsko <dwr@codingbox.io> (https://github.com/viatsko)",
   "license": "MIT",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "private": true,
   "repository": {
     "type": "git",
