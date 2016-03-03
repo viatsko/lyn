@@ -5,17 +5,17 @@ defmodule Lyn.SidebarHelper do
     path = Enum.at(conn.path_info, 1)
 
     if !path do
-      "objects.html"
+      path = "objects"
+    end
+
+    path = path <> ".html"
+
+    eex_path = Path.join([Application.app_dir(:lyn), "../../../../web/templates/admin/sidebar", path <> ".eex"])
+
+    if File.exists?(eex_path) do
+      path
     else
-      path = path <> ".html"
-
-      eex_path = Path.join([Application.app_dir(:lyn), "../../../../web/templates/admin/sidebar", path <> ".eex"])
-
-      if File.exists?(eex_path) do
-        path
-      else
-        "objects.html"
-      end
+      nil
     end
   end
 end
