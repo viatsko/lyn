@@ -3,7 +3,7 @@ defmodule Lyn.Mixfile do
 
   def project do
     [app: :lyn,
-     version: "0.0.13",
+     version: "0.0.14",
      elixir: "~> 1.2.0",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
