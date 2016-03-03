@@ -73,4 +73,5 @@ Main author and active maintainer is Valerii Iatsko, feel free to follow:
 Based on some code from these projects:
 * [Phoenix Guardian](https://github.com/hassox/phoenix_guardian) by [@hassox](https://github.com/hassox)
 * [PxBlog tutorial](https://github.com/Diamond/pxblog) by [@Diamond](https://github.com/Diamond)
+* [React Redux Universal Hot Example](https://github.com/erikras/react-redux-universal-hot-example) by [@erikras](https://github.com/erikras)
 * [Ex Admin](https://github.com/smpallen99/ex_admin) by [@smpallen99](https://github.com/smpallen99)
