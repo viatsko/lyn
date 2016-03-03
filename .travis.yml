@@ -12,6 +12,13 @@ sudo: false # faster builds
 notifications:
   email: false
 
+addons:
+  postgresql: "9.4"
+
+services:
+  - postgresql
+
 before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
+  - psql -c 'create database lyn_test;' -U postgres
