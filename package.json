@@ -17,7 +17,6 @@
   "dependencies": {
     "autoprefixer": "^6.3.3",
     "babel-core": "^6.5.2",
-    "babel-eslint": "^5.0.0",
     "babel-loader": "^6.2.3",
     "babel-plugin-transform-class-properties": "^6.5.2",
     "babel-plugin-transform-runtime": "^6.5.2",
@@ -48,6 +47,7 @@
     "webpack": "^1.12.14"
   },
   "devDependencies": {
+    "babel-eslint": "^5.0.0",
     "eslint": "^2.2.0",
     "eslint-config-airbnb": "^6.0.2",
     "eslint-plugin-import": "^1.0.3",
