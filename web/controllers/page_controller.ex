@@ -37,7 +37,6 @@ defmodule Lyn.PageController do
       <li><a href="/with_stacktrace">JS error with stacktrace</a></li>
       <li><a href="/without_stacktrace">JS error without stacktrace</a></li>
     </ul>
-    <script src="http://fb.me/react-0.12.2.js"></script>
     <script src="/public/<%= WebPack.file_of(:main) %>"></script>
     <script><%= render.js_render %>("content")</script>
   </body>
