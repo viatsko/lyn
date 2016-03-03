@@ -58,6 +58,13 @@ tree will be ready.
 ## Deploying
 Ready to run in production? Please [check Phoenix Framework deployment guides](http://www.phoenixframework.org/docs/deployment).
 
+## SSL/TLS
+Use `scripts/generate-ssl-certs.sh` to generate self-signed certificate if you need to.
+
+In `config/prod.exs` you will find an example with `:https` directive, uncomment it
+and put there paths to your certificates as well as intermediate certificate if you
+have one.
+
 ## FAQ & Chat
 This project moves fast and has an active community, so if you have a question that is not answered below please visit #lyn channel on [Elixir-lang Slack](https://elixir-lang.slack.com/) or file an issue.
 
