@@ -35,7 +35,9 @@ defmodule Lyn.Mixfile do
                     :ueberauth_google,
                     :ueberauth_identity,
                     :ueberauth_slack,
-                    :ueberauth_twitter]]
+                    :ueberauth_twitter,
+                    :exos,
+                    :poolboy]]
   end
 
   # Specifies which paths to compile per environment.
