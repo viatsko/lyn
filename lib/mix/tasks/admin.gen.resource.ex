@@ -26,7 +26,7 @@ defmodule Mix.Tasks.Admin.Gen.Resource do
   end
 
 
-  defp copy_file(%Config{module: module, package_path: package_path} = config) do
+  defp copy_file(%Config{module: module, package_path: package_path}) do
     filename = String.downcase(module) <> ".ex"
     dest_path = Path.join ~w(web admin)
     dest_file_path = Path.join dest_path, filename

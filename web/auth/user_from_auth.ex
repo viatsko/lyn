@@ -24,7 +24,7 @@ defmodule Lyn.UserFromAuth do
   end
 
   # All the other providers are oauth so should be good
-  defp validate_auth_for_registration(auth), do: :ok
+  defp validate_auth_for_registration(_auth), do: :ok
 
   defp register_user_from_auth(auth, current_user, repo) do
     case validate_auth_for_registration(auth) do
@@ -171,8 +171,8 @@ defmodule Lyn.UserFromAuth do
   # We don't have any nested structures in our params that we are using scrub with so this is a very simple scrub
   defp scrub(params) do
     result = Enum.filter(params, fn
-      {key, val} when is_binary(val) -> String.strip(val) != ""
-      {key, val} when is_nil(val) -> false
+      {_key, val} when is_binary(val) -> String.strip(val) != ""
+      {_key, val} when is_nil(val) -> false
       _ -> true
     end)
     |> Enum.into(%{})

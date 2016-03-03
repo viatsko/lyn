@@ -49,22 +49,22 @@ defmodule Lyn.PageController do
     send_resp(conn, 200,EEx.eval_string(@layout,render: render))
   end
 
-  def index(conn,_params, current_user, _claims), do:
+  def index(conn,_params, _current_user, _claims), do:
     send_rendered_resp(conn,:app)
-  def with_stacktrace(conn,_params, current_user, _claims), do:
+  def with_stacktrace(conn,_params, _current_user, _claims), do:
     send_rendered_resp(conn,{:multi_components,:with_stacktrace})
-  def without_stacktrace(conn,_params, current_user, _claims), do:
+  def without_stacktrace(conn,_params, _current_user, _claims), do:
     send_rendered_resp(conn,{:multi_components,:no_stacktrace})
-  def subcomponent(conn,_params, current_user, _claims), do:
+  def subcomponent(conn,_params, _current_user, _claims), do:
     send_rendered_resp(conn,{:multi_components,:with_css})
 
-  def myrouter(conn,_params, current_user, _claims) do
+  def myrouter(conn,_params, _current_user, _claims) do
     ## this part use react_router as an example of dynamic handler selection
     render = Reaxt.render!(:my_router, conn.request_path)
     send_resp(conn, 200,EEx.eval_string(@layout,render: render))
   end
 
-  def file(conn,params, current_user, _claims) do
+  def file(conn,params, _current_user, _claims) do
     # %{conn|path_info: ["webpack","static",params["filename"]]}
     text conn, File.read!(Path.join([:code.priv_dir(:reaxt_phoenix_example), "static", params["filename"]]))
     #text(conn, "hello #{params["filename"]}")  #%{conn|path_info: ["static",params["filename"]]}

@@ -22,11 +22,11 @@ defmodule Lyn.Admin.AdminController do
   plug :assign_languages
   plug :object_tree
 
-  def dashboard(conn, _params, current_user, _claims) do
+  def dashboard(conn, _params, _current_user, _claims) do
     render(conn, "dashboard.html")
   end
 
-  def index(conn, params, current_user, _claims) do
+  def index(conn, params, _current_user, _claims) do
     resource = params["resource"]
 
     model = models[resource]
@@ -64,7 +64,7 @@ defmodule Lyn.Admin.AdminController do
     end
   end
 
-  def new(conn, params, current_user, _claims) do
+  def new(conn, params, _current_user, _claims) do
     resource = params["resource"]
 
     case Map.has_key?(params, "site_id") do
@@ -83,7 +83,7 @@ defmodule Lyn.Admin.AdminController do
     end
   end
 
-  def create(conn, params, current_user, _claims) do
+  def create(conn, params, _current_user, _claims) do
     resource = params["resource"]
 
     entry_params = params[singularize(resource)]
@@ -103,7 +103,7 @@ defmodule Lyn.Admin.AdminController do
     end
   end
 
-  def edit(conn, %{"resource" => resource, "id" => id}, current_user, _claims) do
+  def edit(conn, %{"resource" => resource, "id" => id}, _current_user, _claims) do
     model = models[resource]
 
     entry = case function_exported?(model, :admin_outer_texts, 0) do
@@ -119,7 +119,7 @@ defmodule Lyn.Admin.AdminController do
     render(conn, "edit.html", entry: entry, changeset: changeset, model: model, resource: resource)
   end
 
-  def update(conn, params, current_user, _claims) do
+  def update(conn, params, _current_user, _claims) do
     id = params["id"]
 
     resource = params["resource"]
@@ -148,7 +148,7 @@ defmodule Lyn.Admin.AdminController do
     end
   end
 
-  def delete(conn, %{"resource" => resource, "id" => id}, current_user, _claims) do
+  def delete(conn, %{"resource" => resource, "id" => id}, _current_user, _claims) do
     model = models[resource]
 
     entry = Repo.get!(model, id)
@@ -208,10 +208,6 @@ defmodule Lyn.Admin.AdminController do
 
     # Throwing object_tree to frontend
     assign(conn, :object_tree, object_tree_list)
-  end
-
-  defp generate_model_map(conn, model) do
-    generate_model_map(conn, model, 0)
   end
 
   # Generates specified model and checks if it has admin_outer_texts
