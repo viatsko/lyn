@@ -118,10 +118,7 @@ end
 
 defmodule WebPack.Util do
   def web_priv do
-    case Application.get_env :lyn, :otp_app, :no_app_specified do
-      :no_app_specified -> :no_app_specified
-      web_app -> :code.priv_dir(web_app)
-    end
+    :code.priv_dir(:lyn)
   end
 
   def web_app do

@@ -16,7 +16,7 @@ defmodule Lyn.WebPackController do
         |> put_resp_header("content-type", "text/event-stream")
         |> send_chunked(200)
 
-    hot? = Application.get_env(:reaxt,:hot)
+    hot? = Application.get_env(:lyn,:hot)
     if hot? == :client, do: Plug.Conn.chunk(conn, "event: hot\ndata: nothing\n\n")
     if hot?, do:
       GenEvent.add_mon_handler(WebPack.Events,{WebPack.Plug.Static.EventHandler,make_ref},conn)

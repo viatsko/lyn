@@ -6,7 +6,7 @@ defmodule Lyn.Mixfile do
      version: "0.0.14",
      elixir: "~> 1.2.0",
      elixirc_paths: elixirc_paths(Mix.env),
-     compilers: [:phoenix, :gettext] ++ Mix.compilers,
+     compilers: [:phoenix, :gettext, :reaxt_webpack] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      aliases: aliases,

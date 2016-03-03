@@ -6,7 +6,7 @@ defmodule Mix.Tasks.Compile.ReaxtWebpack do
       Mix.Task.run("npm.install", args)
     else
       installed_version = Poison.decode!(File.read!("#{WebPack.Util.web_app}/node_modules/reaxt/package.json"))["version"]
-      current_version = Poison.decode!(File.read!("#{:code.priv_dir(:reaxt)}/commonjs_reaxt/package.json"))["version"]
+      current_version = Poison.decode!(File.read!("#{:code.priv_dir(:lyn)}/commonjs_reaxt/package.json"))["version"]
       if  installed_version !== current_version, do:
         Mix.Task.run("npm.install", args)
     end
