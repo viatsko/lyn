@@ -52,6 +52,7 @@ defmodule Lyn.Mixfile do
      {:earmark, "~> 0.2.1", only: :dev},
      {:ex_doc, "~> 0.11.4", only: :dev},
      {:ex_machina, "~> 0.6.1", only: :test},
+     {:exos, "1.0.0"},
      {:gettext, "~> 0.10.0"},
      {:guardian_db, "~> 0.4"},
      {:guardian, "~> 0.9.0"},
