@@ -3,6 +3,8 @@ defmodule Lyn.User do
 
   import Comeonin.Bcrypt, only: [hashpwsalt: 1]
 
+  alias Lyn.Repo
+
   schema "users" do
     field :username, :string
     field :name, :string
@@ -78,5 +80,11 @@ defmodule Lyn.User do
     else
       changeset
     end
+  end
+
+  def make_admin!(user) do
+    user
+    |> cast(%{is_admin: true}, ~w(), ~w(is_admin))
+    |> Repo.update!
   end
 end
