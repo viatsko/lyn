@@ -15,6 +15,12 @@ config :lyn, Lyn.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [host: "example.com", port: 80],
   cache_static_manifest: "priv/static/manifest.json"
+  # , https: [port: 443,
+  #         otp_app: :lyn,
+  #         keyfile: "config/sslcerts/key.pem",
+  #         certfile: "config/sslcerts/cert.pem",
+  #         # cacertfile: "config/sslcerts/cacert.pem" # OPTIONAL Key for intermediate certificates
+  #         ]
 
 # Do not print debug messages in production
 config :logger, level: :info
