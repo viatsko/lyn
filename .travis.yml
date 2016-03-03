@@ -10,7 +10,8 @@ env: MIX_ENV=test
 sudo: false # faster builds
 
 notifications:
-  email: false
+  email:
+    - dwr@codingbox.io
 
 addons:
   postgresql: "9.4"
