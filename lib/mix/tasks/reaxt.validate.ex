@@ -13,7 +13,7 @@ defmodule Mix.Tasks.Reaxt.Validate do
       Mix.raise """
                 Reaxt :otp_app is not configured.
                 Add following to config.exs
-                  config :reaxt, :otp_app, :your_app
+                  config :lyn, :otp_app, :your_app
                 """
 
     packageJsonPath = Path.join(WebPack.Util.web_app, "package.json")
@@ -22,7 +22,7 @@ defmodule Mix.Tasks.Reaxt.Validate do
                 Reaxt could not find a package.json in #{WebPack.Util.web_app}.
                 Add package.json to #{WebPack.Util.web_app} or configure a new
                 web_app directory in config.exs:
-                  config :reaxt, :web_app, "webapp"
+                  config :lyn, :web_app, "webapp"
                 """
 
     if Poison.decode!(File.read!(packageJsonPath))["dependencies"]["webpack"] == nil, do:

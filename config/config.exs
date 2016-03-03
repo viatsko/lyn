@@ -15,11 +15,9 @@ config :lyn, Lyn.Endpoint,
            adapter: Phoenix.PubSub.PG2]
 
 # React server-side rendering config
-config :lyn, :reaxt, [
-  hot: false, # false | true | :client hot compilation and loading
-  pool_size: 1, # pool size of react renderes
-  pool_max_overflow: 5 # maximum pool extension when the pool is full
-]
+config :lyn, :hot, if(Mix.env == :dev, do: :client, else: false)
+config :lyn, :pool_size, if(Mix.env == :dev, do: 1, else: 8)
+config :lyn, :pool_max_overflow, if(Mix.env == :dev, do: 5, else: 16)
 
 # Configures Elixir's Logger
 config :logger, :console,
