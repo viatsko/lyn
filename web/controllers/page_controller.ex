@@ -46,7 +46,10 @@ defmodule Lyn.PageController do
 
   defp send_rendered_resp(conn,component) do
     render = Reaxt.render!(component,%{items: ["Home","Contact","Pages"]})
-    send_resp(conn, 200,EEx.eval_string(@layout,render: render))
+
+    conn
+    |> put_resp_content_type("text/html")
+    |> send_resp(200, EEx.eval_string(@layout, render: render))
   end
 
   def index(conn,_params, _current_user, _claims), do:
@@ -61,12 +64,17 @@ defmodule Lyn.PageController do
   def myrouter(conn,_params, _current_user, _claims) do
     ## this part use react_router as an example of dynamic handler selection
     render = Reaxt.render!(:my_router, conn.request_path)
-    send_resp(conn, 200,EEx.eval_string(@layout,render: render))
+
+    conn
+    |> put_resp_content_type("text/html")
+    |> send_resp(200,EEx.eval_string(@layout,render: render))
   end
 
   def file(conn,params, _current_user, _claims) do
     # %{conn|path_info: ["webpack","static",params["filename"]]}
-    text conn, File.read!(Path.join([:code.priv_dir(:reaxt_phoenix_example), "static", params["filename"]]))
+    conn
+    |> put_resp_content_type("text/javascript")
+    |> text(File.read!(Path.join([:code.priv_dir(:lyn), "static", params["filename"]])))
     #text(conn, "hello #{params["filename"]}")  #%{conn|path_info: ["static",params["filename"]]}
     #send_file(conn, Path.join(:code.priv_dir("static"), params["filename"]))
   end

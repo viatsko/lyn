@@ -9,6 +9,11 @@ defmodule Lyn.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :no_csrf do
+    plug :accepts, ["html"]
+    plug :put_secure_browser_headers
+  end
+
   # This plug will look for a Guardian token in the session in the default location
   # Then it will attempt to load the resource found in the JWT.
   # If it doesn't find a JWT in the default location it doesn't do anything
@@ -56,13 +61,18 @@ defmodule Lyn.Router do
     get "/without_stacktrace", PageController, :without_stacktrace
     get "/subcomponent", PageController, :subcomponent
     get "/myrouter/*_rest", PageController, :myrouter
-    get "/public/*filename", PageController, :file
 
     # Authentication
     delete "/logout", AuthController, :logout
     resources "/users", UserController
     resources "/authorizations", AuthorizationController
     resources "/tokens", TokenController
+  end
+
+  scope "/public", Lyn do
+    pipe_through [:no_csrf]
+    
+    get "/*filename", PageController, :file
   end
 
   scope "/auth", Lyn do
