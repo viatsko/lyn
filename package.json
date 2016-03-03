@@ -50,6 +50,7 @@
   "devDependencies": {
     "eslint": "^2.2.0",
     "eslint-config-airbnb": "^6.0.2",
+    "eslint-plugin-import": "^1.0.3",
     "eslint-plugin-react": "^4.1.0"
   },
   "engines": {
