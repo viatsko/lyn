@@ -84,3 +84,4 @@ Based on some code from these projects:
 * [Phoenix Guardian](https://github.com/hassox/phoenix_guardian) by [@hassox](https://github.com/hassox)
 * [PxBlog tutorial](https://github.com/Diamond/pxblog) by [@Diamond](https://github.com/Diamond)
 * [React Redux Universal Hot Example](https://github.com/erikras/react-redux-universal-hot-example) by [@erikras](https://github.com/erikras)
+* [Typograph](https://github.com/stereobooster/typograph) by [@stereobooster](https://github.com/stereobooster)
