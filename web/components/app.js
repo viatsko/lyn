@@ -1,14 +1,25 @@
 var React = require("react");
 var CssHeader = require("./multi_components.js").with_css
 var config = require("reaxt/config")
-module.exports = React.createClass({displayName: 'app',
-  getInitialState: function(){
+
+module.exports = class app extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      focused: 0
+    };
+  }
+
+  getInitialState() {
     return { focused: 0 }
-  },
-  clicked: function(index){
+  }
+
+  clicked(index) {
     this.setState({focused: index})
-  },
-  render: function() {
+  }
+
+  render() {
     var self = this
     return (
       <div>
@@ -24,4 +35,4 @@ module.exports = React.createClass({displayName: 'app',
       </div>
     )
   }
-})
+}
