@@ -1,4 +1,4 @@
-var client_config = require("./../../webpack.config.js")
+var client_config = require("../../web/webpack.config.js")
 // add reloading code to entries
 function add_to_entries(obj,newEntry){
   if(typeof(obj.entry) === 'string'){

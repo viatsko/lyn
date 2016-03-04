@@ -16,7 +16,7 @@ module.exports = {
   },
 
   output: {
-    path: "./priv/static",
+    path: __dirname + "/priv/static",
     filename: "[name]"
   },
 

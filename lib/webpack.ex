@@ -50,7 +50,7 @@ defmodule WebPack.Plug.Static do
   get "/webpack/client.js" do
     conn
     |> put_resp_content_type("application/javascript")
-    |> send_file(200,"#{WebPack.Util.web_app}/node_modules/reaxt/webpack_client.js")
+    |> send_file(200,"#{WebPack.Util.web_app}/../node_modules/reaxt/webpack_client.js")
     |> halt
   end
   match _, do: conn
@@ -110,7 +110,7 @@ end
 
 defmodule WebPack.Compiler do
   def start_link do
-    cmd = "node ./node_modules/reaxt/webpack_server"
+    cmd = "node ../node_modules/reaxt/webpack_server"
     hot_arg = if Application.get_env(:lyn, :hot) == :client, do: " hot",else: ""
     Exos.Proc.start_link(cmd<>hot_arg,[],[cd: WebPack.Util.web_app],[name: __MODULE__],WebPack.Events)
   end

@@ -1,4 +1,4 @@
-var React = require("react")
+var React = require("react");
 var CssHeader = require("./multi_components.js").with_css
 var config = require("reaxt/config")
 module.exports = React.createClass({displayName: 'app',

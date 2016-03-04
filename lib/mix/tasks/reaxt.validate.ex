@@ -16,26 +16,6 @@ defmodule Mix.Tasks.Reaxt.Validate do
                   config :lyn, :otp_app, :your_app
                 """
 
-    packageJsonPath = Path.join(WebPack.Util.web_app, "package.json")
-    if not File.exists?(packageJsonPath), do:
-      Mix.raise """
-                Reaxt could not find a package.json in #{WebPack.Util.web_app}.
-                Add package.json to #{WebPack.Util.web_app} or configure a new
-                web_app directory in config.exs:
-                  config :lyn, :web_app, "webapp"
-                """
-
-    if Poison.decode!(File.read!(packageJsonPath))["dependencies"]["webpack"] == nil, do:
-      Mix.raise """
-                Reaxt requires webpack as a dependency in #{packageJsonPath}.
-                Add a dependency to 'webpack' like:
-                  {
-                    dependencies: {
-                      "webpack": "^1.4.13"
-                    }
-                  }
-                """
-
     if (Enum.all?(args, &(&1 != "--reaxt-skip-compiler-check"))
         and Enum.all? (Mix.Project.get!).project[:compilers], &(&1 != :reaxt_webpack)), do:
       Mix.raise """

@@ -1,4 +1,5 @@
 var React = require('react'),
+    ReactDOMServer = require('react-dom/server'),
     Server = require('node_erlastic').server,
 	Bert = require('node_erlastic/bert'),
     styleCollector = require("./style-collector"),
@@ -17,7 +18,7 @@ function rendering(component,module,submodule,param){
   try{
     var html
     var css = styleCollector.collect(function() {
-      html = React.renderToString(component)
+      html = ReactDOMServer.renderToString(component)
     })
     return Bert.tuple(Bert.atom("ok"),{
       html: html,
@@ -48,7 +49,7 @@ function default_server_render(arg,render){
 var current_ref = 0
 Server(function(term,from,state,done){
   var module=term[1].toString(), submodule=term[2].toString(), args=term[3], timeout=term[4],
-      handler = require("./../../components/"+module)
+      handler = require("./../../web/components/"+module)
   submodule = (submodule == "nil") ? undefined : submodule
   handler = (!submodule) ? handler : handler[submodule]
   handler.reaxt_server_render = handler.reaxt_server_render || default_server_render

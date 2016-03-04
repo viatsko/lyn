@@ -1,4 +1,4 @@
-defmodule Lyn.WebPackController do
+defmodule Lyn.WebpackController do
   use Lyn.Web, :controller
 
   def stats(conn, _params, _current_user, _claims) do
