@@ -35,7 +35,7 @@ module.exports = class app extends React.Component {
             style = 'focused';
           }
 
-          return <li className={style} onClick={this._clicked(index)}>{m}</li>;
+          return <li key={index} className={style} onClick={this._clicked(index)}>{m}</li>;
         })}
         </ul>
         <p>Selected: {this.props.items[this.state.focused]}</p>
