@@ -39,7 +39,8 @@ defmodule Lyn.Mixfile do
                     :ueberauth_slack,
                     :ueberauth_twitter,
                     :exos,
-                    :poolboy] ++ dev_apps]
+                    :poolboy,
+                    :absinthe_plug] ++ dev_apps]
   end
 
   # Specifies which paths to compile per environment.
@@ -50,7 +51,8 @@ defmodule Lyn.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:comeonin, "~> 2.1.1"},
+    [{:absinthe_plug, "~> 1.0.0"},
+     {:comeonin, "~> 2.1.1"},
      {:cowboy, "~> 1.0.4"},
      {:dogma, "~> 0.1.1", only: :dev},
      {:earmark, "~> 0.2.1", only: :dev},
