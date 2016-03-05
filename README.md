@@ -89,3 +89,6 @@ Based on some code from these projects:
 * [React Redux Universal Hot Example](https://github.com/erikras/react-redux-universal-hot-example) by [@erikras](https://github.com/erikras)
 * [Reaxt](https://github.com/awetzel/reaxt) by [@awetzel](https://github.com/awetzel)
 * [Typograph](https://github.com/stereobooster/typograph) by [@stereobooster](https://github.com/stereobooster)
+
+## License
+[MIT](LICENSE.md)
