@@ -57,10 +57,8 @@ defmodule Lyn.Router do
 
     # Static
     get "/", PageController, :index
-    get "/with_stacktrace", PageController, :with_stacktrace
-    get "/without_stacktrace", PageController, :without_stacktrace
-    get "/subcomponent", PageController, :subcomponent
-    get "/myrouter/*_rest", PageController, :myrouter
+    get "/news", PageController, :index
+    get "/about", PageController, :index
 
     # Authentication
     delete "/logout", AuthController, :logout
@@ -71,7 +69,7 @@ defmodule Lyn.Router do
 
   scope "/public", Lyn do
     pipe_through [:no_csrf]
-    
+
     get "/*filename", PageController, :file
   end
 

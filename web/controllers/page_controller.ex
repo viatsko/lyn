@@ -28,7 +28,7 @@ defmodule Lyn.PageController do
   defp send_rendered_resp(conn, component) do
     #render = Reaxt.render!(:my_router, conn.request_path)
     render = Reaxt.render!(component, %{
-      path: conn.request_path,
+      location: conn.request_path,
       items: ["Home","Contact","Pages"]
     })
     #render = Reaxt.render!(:App, conn.request_path)
@@ -39,7 +39,7 @@ defmodule Lyn.PageController do
   end
 
   def index(conn,_params, _current_user, _claims), do:
-    send_rendered_resp(conn, :App)
+    send_rendered_resp(conn, :index)
 
   def file(conn,params, _current_user, _claims) do
     # %{conn|path_info: ["webpack","static",params["filename"]]}
