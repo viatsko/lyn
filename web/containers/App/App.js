@@ -18,10 +18,10 @@ export default class App extends React.Component {
               </IndexLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" activeClassName="active" to={'/about'}>About</Link>
+              <Link className="nav-link" activeClassName="active" to={'/news'}>News</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" activeClassName="active" to={'/news'}>News</Link>
+              <Link className="nav-link" activeClassName="active" to={'/about'}>About</Link>
             </li>
           </ul>
         </nav>
