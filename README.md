@@ -28,9 +28,6 @@ I strongly believe Elixir is the future of CMS building.
 ## Features
 * React Server-Side render using heavily modified [Reaxt](https://github.com/awetzel/reaxt) source-code under the hood
 
-## Screenshots
-![](https://cloud.githubusercontent.com/assets/376065/13376060/d1766532-ddb0-11e5-9959-1c9260df6bc1.png)
-
 ## Before You Begin
 Before you begin we recommend you read about the basic building blocks that assemble a Lyn application:
 * [Elixir](http://elixir-lang.org/)
