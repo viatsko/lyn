@@ -115,13 +115,16 @@ defmodule Lyn.Mixfile do
   defp package do
     [# These are the default files included in the package
      files: [
-       "config",
+       "config/config.exs",
+       "config/dev.exs",
+       "config/prod.exs",
+       "config/test.exs",
        "docs",
        "lib",
        "priv/commonjs_reaxt",
        "priv/gettext",
        "priv/repo",
-       "test",
+       "scripts",
        "web",
        ".babelrc",
        ".eslintrc",
