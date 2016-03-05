@@ -26,7 +26,7 @@ module.exports = {
   reaxt_server_render(initialProps, render) {
     match({ routes, location: initialProps.location }, (error, redirectLocation, renderProps) => {
       render(
-        <RouterContext {...renderProps} />
+        <RouterContext history={browserHistory} {...renderProps} />
       );
     });
   },
