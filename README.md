@@ -2,8 +2,8 @@
 [![Build Status](https://travis-ci.org/viatsko/lyn.svg?branch=master)](https://travis-ci.org/viatsko/lyn)
 [![Dependency Status](https://david-dm.org/viatsko/lyn.svg?style=flat-square)](https://david-dm.org/viatsko/lyn)
 [![devDependency Status](https://david-dm.org/viatsko/lyn/dev-status.svg?style=flat-square)](https://david-dm.org/viatsko/lyn#info=devDependencies)
-[![Hex Version](http://img.shields.io/hexpm/v/lyn.svg?style=flat)](https://hex.pm/packages/lyn)
-[![Hex docs](http://img.shields.io/badge/hex.pm-docs-green.svg?style=flat)](https://hexdocs.pm/lyn)
+[![Hex Version](https://img.shields.io/hexpm/v/lyn.svg?style=flat)](https://hex.pm/packages/lyn)
+[![Hex docs](https://img.shields.io/badge/hex.pm-docs-green.svg?style=flat)](https://hexdocs.pm/lyn)
 [![PayPal donate button](https://img.shields.io/badge/donate-paypal-brightgreen.svg?style=flat-square)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=842M2JWBL3JPJ)
 
 **DEVELOPMENT IS IN PROGRESS. If you have ideas, suggestions, questions, please join #lyn slack channel in Elixir's slack (read about chat below)**
