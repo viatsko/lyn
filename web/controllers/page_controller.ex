@@ -14,6 +14,7 @@ defmodule Lyn.PageController do
   <html>
   <head>
     <%= WebPack.header %>
+    <title>Lyn App</title>
     <style><%= render.css %></style>
   </head>
   <body>
