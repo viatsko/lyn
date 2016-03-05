@@ -1,7 +1,7 @@
 import React from 'react';
 import config from 'reaxt/config';
 
-module.exports = class app extends React.Component {
+class App extends React.Component {
   static propTypes = {
     items: React.PropTypes.array
   };
@@ -39,5 +39,14 @@ module.exports = class app extends React.Component {
         <p>Selected: {this.props.items[this.state.focused]}</p>
       </div>
     );
+  }
+}
+
+module.exports = {
+  reaxt_server_render(initialProps, render) {
+    render(<App {...initialProps} />);
+  },
+  reaxt_client_render(initialProps, render) {
+    render(<App {...initialProps} />);
   }
 };
