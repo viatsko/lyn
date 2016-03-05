@@ -3,9 +3,9 @@ defmodule Lyn.AuthControllerTest do
 
   import Lyn.Factory
 
-  alias Lyn.Repo
+  # alias Lyn.Repo
   alias Lyn.User
-  alias Lyn.GuardianToken
+  # alias Lyn.GuardianToken
 
   setup do
     user_auth = create(:user) |> with_authorization
