@@ -14,6 +14,8 @@ of modern technologies like React and Elixir.
 
 In order to run, Lyn requires **Elixir 1.2 or higher**, **PostgreSQL 9.4 or higher** and **NodeJS 4 or higher**.
 
+Please check [ROADMAP](ROADMAP.md) on progress.
+
 ## Introduction
 Lyn is a CMS written in Elixir. It combines CRUD and Object Tree models, which means
 that all of the site structure in kept in single tree of objects and provides
