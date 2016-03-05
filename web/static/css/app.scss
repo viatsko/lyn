@@ -1,4 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900);
+
 $icon-font-path: "/fonts/"; /* use fonts from priv/static/fonts/ */
+
 @import "~bootstrap/scss/bootstrap";
 $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
+
+body {
+  font-family: Roboto;
+}
