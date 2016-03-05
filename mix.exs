@@ -3,7 +3,7 @@ defmodule Lyn.Mixfile do
 
   def project do
     [app: :lyn,
-     version: "0.0.14",
+     version: "0.0.15",
      elixir: "~> 1.2.0",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers ++ [:reaxt_webpack],
@@ -104,6 +104,7 @@ defmodule Lyn.Mixfile do
     [
       extras: [
         "README.md",
+        "ROADMAP.md",
         "CONTRIBUTING.md"
       ]
     ]
@@ -126,6 +127,7 @@ defmodule Lyn.Mixfile do
        "package.json",
        "webpack.config.js",
        "README.md",
+       "ROADMAP.md",
        "LICENSE.md"
      ],
      maintainers: ["Valerii Iatsko"],
