@@ -6,7 +6,7 @@ otp_release:
   - 18.2.1
 
 env:
-  - MIX_ENV=test TRAVIS_NODE_VERSION="4"
+  - MIX_ENV=test TRAVIS_NODE_VERSION="5.6.0"
 
 sudo: false # faster builds
 
