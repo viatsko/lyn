@@ -18,10 +18,28 @@ module.exports = {
       return []
   })(),
 
+  resolve: {
+    modulesDirectories: [
+      __dirname + "/../node_modules"
+    ]
+  },
+
   module: {
     loaders: [
       //!!! very important, use "reaxt/style" loader instead of "style" for css
       { test: /\.css$/, loader: "reaxt/style!css" },
+      {
+        test: /\.scss$/,
+        loader: "reaxt/style!css!postcss!sass?outputStyle=expanded&sourceMap"
+      },
+      {
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "url-loader?limit=10000&minetype=application/font-woff"
+      },
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "file-loader"
+      },
       //with react-hot, you have automatically hot loading of your components available
       { test: /components\/.*\.js$/, loader: "babel-loader" },
       { test: /containers\/.*\.js$/, loader: "babel-loader" }
