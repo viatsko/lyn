@@ -1,4 +1,7 @@
-var webpack = require('webpack')
+/* eslint-disable */
+
+var webpack = require('webpack');
+
 module.exports = {
   entry: "./index",
   output: {
@@ -20,7 +23,8 @@ module.exports = {
       //!!! very important, use "reaxt/style" loader instead of "style" for css
       { test: /\.css$/, loader: "reaxt/style!css" },
       //with react-hot, you have automatically hot loading of your components available
-      { test: /components\/.*\.js$/, loader: "babel-loader" }
+      { test: /components\/.*\.js$/, loader: "babel-loader" },
+      { test: /containers\/.*\.js$/, loader: "babel-loader" }
     ]
   },
 

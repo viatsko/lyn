@@ -6,7 +6,7 @@ function default_client_render(props,render,param){
 }
 
 window.reaxt_render = function(module,submodule,props,param){
-  module = require("./../../web/components/"+module)
+  module = require("./../../web/containers/"+module)
   submodule = (submodule) ? module[submodule] :module
   submodule.reaxt_client_render = submodule.reaxt_client_render || default_client_render
   return function(elemid){

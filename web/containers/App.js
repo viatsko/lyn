@@ -1,5 +1,4 @@
 import React from 'react';
-import {with_css as CssHeader} from './multi_components'; // eslint-disable-line
 import config from 'reaxt/config';
 
 module.exports = class app extends React.Component {
@@ -26,7 +25,6 @@ module.exports = class app extends React.Component {
 
     return (
       <div>
-        <CssHeader />
         <div>Example config : { config.example_config }</div>
         <ul>{this.props.items.map((m, index) => {
           let style = '';

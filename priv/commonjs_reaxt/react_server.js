@@ -43,13 +43,13 @@ function default_server_render(arg,render){
 
 // protocol :
 // call {:render, module, submodule | nil, arg}
-// - if :render_tpl, take handler from require("components/{module}") or require("template/{module}")[submodule]
+// - if :render_tpl, take handler from require("containers/{module}") or require("template/{module}")[submodule]
 //   then reply {:ok,%{html: ReactRenderingOf(handler,arg),js_render: renderingjs,css: css}}
 // if error reply {:error, {:render_error,error,stack,renderingjs} | {:handler_error,error,stack}}
 var current_ref = 0
 Server(function(term,from,state,done){
   var module=term[1].toString(), submodule=term[2].toString(), args=term[3], timeout=term[4],
-      handler = require("./../../web/components/"+module)
+      handler = require("./../../web/containers/"+module)
   submodule = (submodule == "nil") ? undefined : submodule
   handler = (!submodule) ? handler : handler[submodule]
   handler.reaxt_server_render = handler.reaxt_server_render || default_server_render
