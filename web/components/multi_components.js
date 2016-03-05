@@ -2,7 +2,7 @@ import React from 'react';
 
 module.exports.no_stacktrace = class NoStacktrace extends React.Component {
   render() {
-    throw new Error('an error just thrown without Error() wrapping');
+    throw 'an error just thrown without Error() wrapping'; // eslint-disable-line
   }
 };
 
