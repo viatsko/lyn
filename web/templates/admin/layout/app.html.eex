@@ -26,14 +26,16 @@
           System
           </a>
           <div class="dropdown-menu" aria-labelledby="Preview">
-            <a class="dropdown-item" href="<%= admin_admin_path(@conn, :index, "object_types") %>">Object Types <span class="sr-only">(current)</span></a>
-            <a class="dropdown-item" href="<%= admin_admin_path(@conn, :index, "languages") %>">Languages <span class="sr-only">(current)</span></a>
-            <a class="dropdown-item" href="<%= admin_admin_path(@conn, :index, "domains") %>">Domains <span class="sr-only">(current)</span></a>
-            <a class="dropdown-item" href="<%= admin_admin_path(@conn, :index, "sites") %>">Sites <span class="sr-only">(current)</span></a>
+            <a class="dropdown-item" href="<%= admin_admin_path(@conn, :index, "object_types") %>">Object Types</a>
+            <a class="dropdown-item" href="<%= admin_admin_path(@conn, :index, "languages") %>">Languages</a>
+            <a class="dropdown-item" href="<%= admin_admin_path(@conn, :index, "domains") %>">Domains</a>
+            <a class="dropdown-item" href="<%= admin_admin_path(@conn, :index, "sites") %>">Sites</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="<%= admin_sql_path(@conn, :index) %>">Sql <span class="sr-only">(current)</span></a>
+            <a class="dropdown-item" href="<%= admin_sql_path(@conn, :index) %>">Sql</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="<%= admin_maintenance_path(@conn, :index) %>">Maintenance <span class="sr-only">(current)</span></a>
+            <a class="dropdown-item" href="<%= admin_admin_path(@conn, :index, "features") %>">Features</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="<%= admin_maintenance_path(@conn, :index) %>">Maintenance</a>
           </div>
         </li>
       </ul>

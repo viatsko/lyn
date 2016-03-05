@@ -8,6 +8,23 @@ defmodule Lyn.Feature do
     timestamps
   end
 
+  def admin_fields do
+    [
+      id: %{
+        label: "id",
+        type: :integer
+      },
+      name: %{
+        label: "name",
+        type: :string
+      },
+      active: %{
+        label: "active",
+        type: :boolean
+      }
+    ]
+  end
+
   @required_fields ~w(name active)
   @optional_fields ~w()
 

@@ -4,6 +4,7 @@ defmodule Lyn.Admin.AdminController do
   import Inflex
 
   alias Lyn.Domain
+  alias Lyn.Feature
   alias Lyn.Language
   alias Lyn.Object
   alias Lyn.ObjectType
@@ -12,6 +13,7 @@ defmodule Lyn.Admin.AdminController do
 
   def models, do: %{
     "domains" => Domain,
+    "features" => Feature,
     "languages" => Language,
     "objects" => Object,
     "object_types" => ObjectType,
@@ -67,19 +69,26 @@ defmodule Lyn.Admin.AdminController do
   def new(conn, params, _current_user, _claims) do
     resource = params["resource"]
 
-    case Map.has_key?(params, "site_id") do
-      true ->
-        site_id = params["site_id"]
+    model = models[resource]
 
-        model = models[resource]
+    case resource do
+      "objects" ->
+        case Map.has_key?(params, "site_id") do
+          true ->
+            site_id = params["site_id"]
 
-        model_map = generate_model_map(conn, model, site_id)
+            model_map = generate_model_map(conn, model, site_id)
 
-        changeset = model.changeset(model_map)
+            changeset = model.changeset(model_map)
+
+            render(conn, "new.html", changeset: changeset, model: model, resource: resource)
+          _ ->
+            redirect(conn, to: admin_admin_path(conn, :index, resource))
+        end
+      _ ->
+        changeset = model.changeset(struct(model))
 
         render(conn, "new.html", changeset: changeset, model: model, resource: resource)
-      _ ->
-        redirect(conn, to: admin_admin_path(conn, :index, resource))
     end
   end
 
