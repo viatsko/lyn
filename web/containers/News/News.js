@@ -8,7 +8,8 @@ export default class News extends React.Component {
   render() {
     return (
       <div>
-        <p>news</p>
+        <h1>News</h1>
+        <p>This is news page content</p>
       </div>
     );
   }

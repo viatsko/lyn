@@ -8,7 +8,8 @@ export default class About extends React.Component {
   render() {
     return (
       <div>
-        <p>about</p>
+        <h1>About</h1>
+        <p>This is about page content</p>
       </div>
     );
   }
