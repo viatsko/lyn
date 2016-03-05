@@ -34,8 +34,10 @@ I strongly believe Elixir is the future of CMS building.
 ## Before You Begin
 Before you begin we recommend you read about the basic building blocks that assemble a Lyn application:
 * [Elixir](http://elixir-lang.org/)
+* [GraphQL](https://facebook.github.io/graphql/)
 * [Phoenix Framework](http://www.phoenixframework.org/)
 * [React](https://facebook.github.io/react/)
+* [Relay](https://facebook.github.io/relay/)
 * [Twitter Bootstrap 4](http://blog.getbootstrap.com/2015/08/19/bootstrap-4-alpha/)
 
 ## Quick Install
