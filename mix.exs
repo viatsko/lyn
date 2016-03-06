@@ -131,6 +131,7 @@ defmodule Lyn.Mixfile do
        ".eslintignore",
        ".iex.exs",
        "mix.exs",
+       "mix.lock",
        "package.json",
        "webpack.config.js",
        "README.md",
